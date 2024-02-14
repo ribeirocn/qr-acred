@@ -1,0 +1,114 @@
+A verifiable decryption mechanism is a system that provides an individual with an encrypted value, a way to compute it, and a proof to confirm the accuracy of the decryption process. In this context, the chosen solution, as described in \cite{chillottiHomomorphicLWEBased2016}, involves a one-time self-validating key. This key is used to decrypt a specific encryption as it would be if it was decrypted with the secret key corresponding to a specific public key. However, contrary to the secret key, the one-time key cannot be used to obtain information about any other ciphertext, besides the one for which it was generated.
+
+\begin{definition}
+Let $A$ be a set of attributes of a specific user, $V$ be a set of constant values, and a function $m=f(A,V)$. Let $\enc{A}$ be some encryption of $A$ with public key $pk$ and $F(\cdot,\cdot)$ a homomorphic function such that $\enc{m}=F(\enc{A},V)$. A one-time key $k$ for a tuple $(A,V,f,pk)$ is a key of a special algorithm \textsf{OTKDecrypt} that, for $y=F(\enc{A},V)$
+\[\textsf{OTKDecrypt}(k,y)= \begin{cases} m & \mbox{if }  \textsf{Valid}(k,y,pk) \\ \perp & \mbox{otherwise} \end{cases}\]
+\end{definition} 
+
+\subsection{OTK Encryption Schema} \label{sec:otkschema} 
+
+The proposed solution adheres to the framework presented in \cite{chillottiHomomorphicLWEBased2016} but is tailored to the ring setting with a primary focus on optimizing efficiency. A straightforward approach is to use a \ac{MLWE}-based encryption schema, with a public key matrix $\p{PK}=[\pA,\pv{b}=\pA.\pv{s}+\tau\pv{e}]^T$,  where $\pA,\pR \from \bkw{TrapGen}(\lambda) \in \intring^{k\times 2k+2}_q$, $\pv{s} \from \T^{k.d}$ and $\pv{e} \from \chi^{k.d}$ and a ciphertext
+\begin{equation}\label{eq:mcipher}
+\enc{\p{m}}=\begin{bmatrix}\pv{c_0}\\\p{c_1}\end{bmatrix}=\begin{bmatrix}\pA.\pv{u}+\tau\pv{e_1}\\\inprod{\pv{b}}{\pv{u}}+\tau\p{e_2}+\Delta.\ppm\end{bmatrix}
+\end{equation}
+
+
+The trapdoor $\pR \in \intring_q^{k\times k+2}$ generated with $\pA \in \intring_q^{k\times k}$, enables the sampling of a polynomial $\pv{x} = \bkw{TrapSampl}(\pA,\pR,\pv{c_0})$ characterized by a small norm, satisfying the equation 
+\begin{equation}\label{eq:unvailabletrap}
+    \pA.\pv{x}=\pv{c_0}
+\end{equation}
+where $\pv{c_0} \in \intring^k_q$ is the first element of an encryption $\enc{\p{m}}$ (\cref{eq:mcipher}).
+
+This polynomial $\pv{x}$ can then be used to recover the message $\ppm=\Gamma(\p{c_1}-\inprod{\pv{x}}{\pv{b}} \bmod q)$ without revealing the secret key $\ps$, where $\p{c_1}$ is the second element of the encryption $\enc{\p{m}}$ (\cref{eq:mcipher}).
+
+The polynomial vector $\pv{otk}=\pv{x}$ acts as a decryption key for that specific ciphertext \cite{chillottiHomomorphicLWEBased2016}.
+This has the immediate consequence of increasing the dimensionality of the ciphertext, transitioning from $2d$ to $d.(k + 1)$, and the public key, expanding from $2.d$ to $d.k.(k + 1)$. Typically, when transitioning from \ac{RLWE} to \ac{MLWE}, the increase in dimensionality is counterbalanced by a reduction in the ring size. However, in our particular scenario, this adjustment would not only diminish the available data slots but would also exert an influence on the depth of homomorphic multiplications.
+
+Instead, we let the public key be $\pv{pk}=[\pv{a},\pv{b}=\ps\pv{a}+\tau\pv{e}]^T$, where $\pv{a},\pv{r} \from \bkw{TrapGen}(\lambda)$, and let the corresponding ciphertext be
+\begin{equation}\label{eq:otkcipher}
+\begin{bmatrix}\p{c_0}\\\p{c_1}\end{bmatrix}=\begin{bmatrix}\inprod{\pv{a}}{\pv{u}}+\tau\p{e_1}\\\inprod{\pv{b}}{\pv{u}}+\tau\p{e_2}+\Delta.\ppm\end{bmatrix}
+\end{equation}
+
+Then, it is possible to sample $\pv{x} \in \intring_q^{k+2}$ such that $\inprod{\pv{a}}{\pv{x}}=\p{c_0}$, and recover the message $\ppm=\Gamma(\p{c_1}-\inprod{\pv{x}}{\pv{b}})$.
+With this approach, the size of the ciphertext does not change, and the public key $\pv{pk}$ increases only by $k+2$, which is much less than with the plain \ac{MLWE} approach.
+
+
+The polynomial vector $\pv{a}$ generated from the primitive $\bkw{TrapGen}$ has structure $\pv{a} = [1, \p{a_0},\ldots,\p{a_k}]$, where $\p{a_0}$ is a randomly generated polynomial and $\p{a_1}$ to $\p{a_k}$ are statistically indistinguishable from random polynomials. As a result, all except one of the $k + 2$ columns in the public key $\pv{pk}=[\pv{a},\pv{b}=\ps\pv{a}+\tau\pv{e}]^T$ consist of plain \ac{RLWE} samples, $\pv{pk_i}=[\p{a_i}, \ps.\p{a_i}+\tau.\p{e_i}]$, ensuring that they do not reveal information about polynomial error $\p{e_i}$ or secret key $\ps$. However, the first column is represented by $\pv{pk_0}=[1,\ps+\tau\p{e_0}]^T$, which can potentially expose the secret key if the distribution of the secret key is different from the distribution of $\tau.\p{e_i}$. Aligning both distributions resolves this potential issue.
+ 
+The One Time Key schema is similar to the BGV/BFV schema except for the following algorithms:
+
+\begin{itemize}[label={--}]
+    \item $(\pv{sk},\pv{pk}, \pv{mk}) \from \bkw{KeyGen}(p, d, 1^\lambda)$: The key generation procedure generates one more key than the BGV/BFV schema: the trapdoor master key $\pv{mk}$, concretely
+    \begin{equation*}
+    \begin{split}
+        \pv{a}, \pv{mk} &\from \textsf{TrapGen}(\lambda)\\
+        \pv{sk}&=[-\ps,1]^T\quad \ps \from \chi^n \\
+        \pv{pk}&=[\pv{a},\pv{b}]^T\quad \pv{b}=\ps.\pv{a}+\tau.\pv{e} \quad \pv{e} \from \chi^{d(k+2)}\\
+    \end{split}
+    \end{equation*}
+    \item $\pv{c} \from \bkw{Encrypt}(\pv{pk},\p{m})$: The encryption procedure is slower than the original one, given the size of the public key $\pv{pk} \in \intring_q^{2(k+2)}$, but it outputs a ciphertext of the same size $\pv{c}=[\p{c_0},\p{c_1}]^T \in \intring_q^2$ (\cref{eq:otkcipher}), where $\pv{u} \in \intring_q^{k+2}$ is a vector of polynomials with coefficients sampled from $\T$.
+    \item $\pv{otk} \from \bkw{OTKGen}(\mathbf{\pv{pk}},\pv{mk},\pv{c})$: The generation of the one-time key $\pv{otk}$ for a ciphertext $\pv{c}$ takes the master key $\pv{mk}$, the public key $\pv{pk}$ and the ciphertext $\pv{c}=[\p{c_0},\p{c_1}]^T$. Thus, a one-time key cannot be built before the computation of the ciphertext, which is not ideal. The $\pv{otk} \in \intring_q^{k+2}$ is sampled from 
+    \begin{equation*}
+        \pv{otk}=\bkw{TrapSamp}(\pv{a},\pv{mk},\p{c_0})
+    \end{equation*}   
+    \item $\ppm \from \bkw{OTKDecrypt}(\pv{pk},\pv{otk},\pv{c})$: OTK decryption takes the one-time key $\pv{otk}$, the public key $\pv{pk}=[\pv{a},\pv{b}]^T$ and the ciphertext $\pv{c}=[\p{c_0},\p{c_1}]^T$ as input and outputs the message $\ppm \in \intring_q$ or $\perp$. The algorithm starts by checking that $\|\pv{otk}\| < B$ is less than the maximum bound (vide \cref{eq:bound}), and that $\pc_0-\inprod{\pv{otk}}{\pv{a}}=\pv{0}$ and outputs $\ppm=\Gamma\left(\p{c_1} - \inprod{\pv{otk}}{\pv{b}} \bmod q\right)$, if both conditions hold and $\perp$ otherwise.
+\end{itemize}
+
+\subsection{Soundness \& Security} It is easy to see that the OTK decryption algorithm is sound, provided that the public key is of the form $\pv{pk}=[\pv{a},\pv{b}=\ps.\pv{a}+\tau.\pv{e}]$ and the error rate $\partial$ of the ciphertext $\pv{c}$ does not exceed $\partial < q/2p - \delta_{\intring}.n.k.B.B_t$.
+\begin{align*}
+    \ppm&=\Gamma\left(\p{c_1} - \inprod{\pv{otk}}{\pv{b}} \bmod q\right)
+    =\Gamma(\p{c_1} - \inprod{\pv{otk}}{\pv{a}}s+\tau.\inprod{\pv{otk}}{\pv{e}})\\
+    &=\Gamma(\p{c_1} - \p{c_0}.s+\tau.\inprod{\pv{otk}}{\pv{e}})
+    =\Gamma(\Delta.\ppm+\tau.\p{\partial} + \tau.\inprod{\pv{otk}}{\pv{e}})
+\end{align*}
+Equality holds if 
+\begin{align*}
+    &\|\p{\partial} + \inprod{\pv{otk}}{\pv{e}}\|_{\infty} < q/2p \Leftrightarrow
+    \|\p{\partial}\|_{\infty} < q/2p + \|\pv{otk}\|_{\infty}.\|\pv{e}\|_{\infty} \\
+    &\Leftrightarrow \|\p{\partial}\| < q/2p + s.B
+\end{align*}
+
+The security of the resulting schema follows if any pair $(\pv{pk},\pv{c})$ is still indistinguishable from random for any polynomial-time algorithm, as it is the underlying schema, and if the tuple $(\pv{pk},\pv{otk},\pv{c}')$ is indistinguishable from random for any polynomial-time algorithm for any $\pv{c}' \neq \pv{c}$. Both indistinguishability may be proven by hybrid arguments that we sketch below.
+
+The public key $\pv{pk}$ comprises $k+2$ polynomial vectors, $[\pa_i,\pb_i]_{i=0}^{k+2}$, where $\pa_0=1$, $\pa_1=\pa' \from \U_{\intring_q}$ is a uniform random polynomial, and $\pa_j$ for $1<j<k$ are polynomials indinstinguishable from random. Each public key vector $[\pa_i, \pa_i.\ps+\pe_i]$, $i\neq 0$ is also an \ac{RLWE} sample and may be replaced by random instances. The first column of the public key is given by $[1, \ps + \pe_0]$, where $\ps, \pe_0 \from \chi^n$ are two random Gaussian values taken from the same distribution, thus revealing nothing. Finally, by the indistinguishability of the underlying schema, we find that $(\pv{pk},\pv{c})$ is indistinguishable from random for a polynomial-time algorithm with an advantage greater than $\epsilon$.
+
+The same strategy may be followed for the tuple $(\pv{pk},\pv{otk},\pv{c}')$. As before, $\pv{pk}$ may be replaced by a random polynomial vector, as, by construction, $\pv{otk}$ reveals nothing about $\pv{mk}$\cite{micciancioTrapdoorsLatticesSimpler2012}. If it were possible to devise a distinguisher algorithm $\D$ that given $\pv{pk}$ and $\pv{otk}$ was able to distinguish $\pv{c}'=[\pc'_0, \pc'_1]^T$, where $\pc'_0 = \inprod{\pv{a}}{\pv{u}'} + \pe_1$, $\pc'_1 = \inprod{\pv{b}}{\pv{u}'} + \pe_2 + \Delta.\ppm'$, from $\pv{c}''=[\px, \py]^T$, $\px,\py \from \U_{\intring_q}$ then it would be possible to build a distinguisher $\D'$ that given $\pv{pk}$ was able to distinguish $\pv{c}'=[\pc'_0, \pc'_1]^T$ from $\pv{c}''=[\px, \py]^T$, by generating a random $\pv{otk} \from \D_{\Lambda,\pv{0},\sigma}$, creating a ciphertext $\pv{c}=[\inprod{\pv{a}}{\pv{otk}},\pz]$ and feeding $\D$.
+
+\subsection{Efficiency}
+
+Although the key generation and encryption algorithms in the proposed encryption scheme share a structure similar to the underlying BFV schema, they demonstrate reduced efficiency. This efficiency decrease is primarily attributed to a significant increase in the size of the public key, which becomes $k + 2$ times larger. To improve operational efficiency, it is crucial to set the value of $k$ to the smallest feasible value, denoted $k = \ceil{\log_b q}$.
+
+However, this optimization faces limitations due to the "Double CRT" representation constraint, which requires $k$ to satisfy the inequality $k \ge 2l_q+2$. Here, $l_q$ represents the count of pairwise coprime values $q_i$ that make up the modulo $q=\prod_i^l q_i$, restricting the reduction of $k$ beyond a certain threshold.
+
+The proposed solution has been implemented in PALISADE\footnote{\url{https://github.com/ribeirocn/palisade-sfdk}}, and performance results (Table \ref{tab:otk}) confirm that except for ``Key Generation'' and ``Encryption'', other BFV operations do not show a decrease in performance, i.e., $\textrm{SlowDow}=\frac{T_\OTK - T_\BFV}{T_\BFV} = 0$. ``Key Generation'' is $4.9$ times slower due to the construction of the special public key, and ``Encryption'' is $2.3$ times slower, mainly due to the larger size of the public key. The most significant drawback is the generation of $\pv{otk}$, which takes almost $18$ times the elapsed time of a multiplication.
+
+
+
+\begin{table}[htbp]
+%\setlength\tabcolsep{3pt}
+\caption{OTK homomorphic schema performance}
+\begin{center}
+\begin{tabular}{lr@{\extracolsep{4pt}}rRrr}
+\hline
+& \multicolumn{2}{c}{$\OTK$ ($\mu s$)} & \multicolumn{2}{c}{$\BFV$ ($\mu s$)} & \multirow{2}{2em}{Slow Down} \\ \cline{2-3} \cline{4-5}
+& $T_\OTK$  & $\sigma$	& $T_\BFV$	& $\sigma$	& \\ \hline
+KeyGen & 12855 & 90 & 2615 & 26 & 4.9 \\
+MultKeyGen & 4776 & 21 & 4794 & 73 & 0 \\
+AutomorphKeyGen &	4789 & 36 & 4778 & 46 & 0 \\
+Encryption & 7682 & 45 & 3407 & 28 & 2.3 \\
+Decryption & 401 & 4 & 398 & 9 & 0 \\
+Add	& 59 & 6 & 56 & 4 & 0 \\
+AddInPlace & 32 & 3 & 29 & 9 & 0 \\
+MultNoRelin & 4133	& 241 & 4144 & 188 & 0 \\
+MultRelin & 5456 & 52 & 5692 & 270 & 0 \\
+Automorph & 755 & 19 & 760 & 17 & 0 \\
+OTKKeyGen & 96569 & 1167 & - & - & - \\			
+OTKDecrypt & 616 & 70 & - & - & - \\ \hline
+\end{tabular}
+\label{tab:otk}
+\end{center}
+\end{table}
+
+\subsection{Usage}
+OTK soundness requires that the holder's public key be of the form $\pv{pk}=[\pv{a},\ps.\pv{a}+\tau.\pv{e}]$ and that the error rate of the encryption is below some bound $\partial$. The former is ensured by having all the public keys of the holder signed by the key escrow service, and the latter can be checked by having the holder provide an OTK to decrypt the multiplication of the freshly encrypted message by an encryption of zero, with a large error, provided by the verifier. The zero encryption error should be such as to emulate the encryption error at level $l-1$, where $l$ is the multiplication level of the function being evaluated. 
+If both requirements are met, the holder may generate the encryption of the message in any way (including randomly) provided that the decryption with the secret key $s$ matches the message she wants to prove.

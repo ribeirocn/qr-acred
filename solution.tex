@@ -1,0 +1,29 @@
+Our proposed solution encompasses a homomorphic encryption framework designed to protect the confidentiality of credentials. Additionally, it incorporates a proof of correct decryption, facilitating the revelation of the outcomes of specific functions applied to the credentials.
+
+During the setup phase, the user is required to enroll her encryption secret key with a key escrow service. In response, the key escrow service issues multiple public keys corresponding to the same secret key, with each of these public keys being digitally signed by the key escrow service. In addition to the act of signing these public keys, the key escrow service also guarantees the provision of revocable anonymity for holders who engage in malicious or improper behavior.
+
+In alignment with established proposals, the credential holder initiates the process by committing to her identity secret key while introducing an element of randomness. Subsequently, she uses this commitment as her unique identifier for a specific issuer. The issuer, in turn, countersigns the commitment, accompanied by certain attributes of the holder, and then furnishes the signature back to the holder. In our approach, we adopt an Ajtai commitment mechanism \cite{ajtaiGeneratingHardInstances1999} (Section \ref{sec:owner}) to generate the holder's identity and utilize a modified version of the GPV signature \cite{gentryTrapdoorsHardLattices2008} (Section \ref{sec:sig}) to sign the commitment.
+
+The holder, using homomorphic encryption, encrypts not only the signed attributes, but also the signature, the commitment, and the randomization element responsible for opening the commitment. Subsequently, she performs a homomorphic function operation on the encrypted data, decrypts the outcome, and transmits it to the verifier. This transmission is accompanied by a proof attesting to the correct decryption process \cite{chillottiHomomorphicLWEBased2016} (Section \ref{sec:otk}).
+
+
+%\begin{description}
+
+%\item[$\textrm{IssuerKeyGen}(1^{\lambda},1^{MS}) \to pk,sk:$] Generates private and public keys for the specified security $\lambda$ and plaintext space $MS$.
+%\item[$\textrm{HolderKeyGen}(1^{\lambda}) \to id_{secret}:$] Generates a secret global identity or get it from some IdP. 
+%\item[$\textrm{Commit}(id_{secret},r) \to id_{issuer},id_{open}$] Commit to the secret $id_{secret}$ and some randomness $r$ and get a commitment $id_{issuer}$ and an opening $id_{open}$.
+%\item[$\textrm{Sign}(id_{issuer},\mu, sk) \to \sigma:$] Generates a signature for $id_{issuer}$ and message $\mu \in MS$.
+%\item[$\textrm{Prove}(id_{issuer},id_{secret},id_{open},\mu,\sigma,pk,result) \to \pi:$] Generates a proof that:
+%\begin{itemize}
+%    \item result is equal to $f(\mu)$, without revealing $\mu$;
+%    \item The holder knows a $\sigma$ that is a signature of the message $\mu$ and the id $id_{issuer}$ by the credential issuer with public key $pk$, without reveling either $\sigma, \mu$, or $id_{issuer}$;
+%    \item the holder knows an $id_{open}$ for the $id_{issuer}$, without revealing $id_{open}$ or $id_{issuer}$.
+%\end{itemize}
+%\item[$\textrm{Verify}(\pi,result,pk) \to \{1,0\}:$] Verify the proof $\pi$ for the $result$ and the issuer public key $pk$.
+%\end{description}
+
+The verifier engages in the process of reevaluating the functions applied to the encrypted data and subsequently scrutinizes the evidence validating the correctness of decryption.
+
+At the heart of the system lies the pivotal homomorphic function, which serves multifaceted purposes. It not only facilitates selective disclosure of attributes (e.g., verifying that the holder is over 18 years old or resides in the EU) but also enables homomorphic unveiling of the commitment, thus substantiating ownership of the credential (as expounded in Section \ref{sec:owner}). Additionally, this function includes homomorphic verification of the signature (as detailed in Section \ref{sec:sig}).
+
+

@@ -1,0 +1,58 @@
+The proof of ownership of a credential is no different from the proof of any other attribute. The holder provides the issuer with a committed value, and the issuer includes it as any other attribute. To prove ownership, the holder opens the commitment but does it homomorphically, not revealing the opener or the commitment.
+
+The commitment can be any commitment with a linear opening, such as, for instance, the Ajtai commitment \cite{ajtaiGeneratingHardInstances1996} adapted to the ring setting. In such a commitment scheme, one commits to a secret vector $\pv{s} \in \intring_{d,p}^l$ with a randomness $\pv{r} \in \intring_{d,p}^l$, where both $\|\pv{s}\|$ and $\|\pv{r}\|$ are small, for some public random values $\pv{a}\from \intring_{d,p}^l$ and $\pv{b}\from \intring_{d,p}^l$, by computing the commitment
+\begin{equation}\label{eq:commit}
+\begin{aligned}
+    \bkw{Comm}(&\pv{s},\pv{r})\colon \intring_{d,p}^{2l} \to \intring_{d,p}\\
+    &\inprod{\pv{a}}{\pv{s}}+\inprod{\pv{b}}{\pv{r}} \mapsto  \pc
+\end{aligned} 
+\end{equation}
+and sending it to the issuer to be signed, together with the issuers' attributes (cf. section \ref{sec:solution}).
+
+Opening the Ajtai commitment is a matter of revealing the committed value $\pv{s}$ and the randomness $\pv{r}$, and check 
+\begin{subequations}\label{eq:commitopen}
+\begin{align}
+    \bkw{OpenCom}(&\pc,\pv{s},\pv{r})\colon \intring_{d,p}^{2l+1} \to \{0,1\} \nonumber\\
+    &\inprod{\pv{a}}{\pv{s}}+\inprod{\pv{b}}{\pv{r}} \stackrel{?}{=} \pc \label{eq:commitopen_a}\\
+    &\|\pv{s}\| \textrm{ and } \|\pv{r}\| \textrm{ are small} \label{eq:commitopen_b}
+\end{align} 
+\end{subequations}
+Implementing the commitment opening homomorphically over the presentation ciphertext $\p{prt} = \enc{\p{m}} \in \intring_q$
+\begin{equation}\label{eq:hcommitopen}
+    \overline{\bkw{OpenCom}}(\p{prt})\colon \intring_{q} \to \enc{\{0,1\}}\\
+\end{equation}
+can be done efficiently if the presentation $\p{prt}$ is the encryption of the canonical embedding of the different elements of the presentation 
+\begin{equation}\label{eq:presentation}
+    \p{prt}=\enc{\{\vv{0},sn,\vv{\sigma}(\pc),\vv{\mu},\vv{\sigma}(\pv{\varsigma}),\vv{\sigma}(\pv{o})\}}
+\end{equation}
+where $\pc$ is the commitment, $\vv{\mu}=\{\mu_0,\ldots\mu_p\}$ is the set of attributes, $\pv{\varsigma}$ is the credential signature (cf. section \ref{sec:sig}), $sn$ is the credential serial number, and $\pv{o}=(\pv{s},\pv{r}) \in \intring_{d,p}^{2l}$ is the commitment opener. Using standard automorphism operations available in $\BGV$ and $\BFV$, the verifier can 
+verifier extract $\enc{\pv{s}}$, $\enc{\pv{r}}$ and $\enc{\pc}$ from the presentation $\p{prt} =\enc{\p{m}}$ and verify  homomorphically \cref{eq:commitopen_a,eq:commitopen_b}.
+
+The \cref{eq:commitopen_a} can be checked efficiently homomorphically by computing 
+\begin{equation}\label{eq:commitverify}
+\SUM_{2l,d}\left((\pv{a},\pv{b}) \odot  \enc{\pv{o}}\right) \ominus \enc{\pc} 
+\end{equation}
+The result will be an encryption of 0 if the commitment was correctly opened or something else otherwise.
+The operators $\odot$ and $\ominus$ denote the element-wise homomorphic multiplication and subtraction, respectively, and $\SUM_{m, n}(\enc{\pv{a}})$ is a homomorphic function that takes $m$ groups of $n$ slots of each encrypted polynomial $\enc{\pa_k}$ and returns an encrypted polynomial $\enc{\pb_k}$ with the first $n$ slots having the group-wise homomorphic addition, and the remaining slots having zero (vide \cref{eq:sumslots}).
+\begin{equation}\label{eq:sumslots}
+\begin{aligned}
+    &\enc{\pv{b}} = \SUM_{m, n}(\enc{\pv{a}})\\
+    &\vv{\sigma}(\pb_k)_i  = 
+    \begin{cases}
+        \overline{\sum}_{j=0}^{m-1} \vv{\sigma}(\pa_k)_{i+j.n} & \text{if } 0\leq i < n\\
+        0 & \text{otherwise}
+    \end{cases}
+\end{aligned}    
+\end{equation}
+With this approach, checking \cref{eq:commitopen_a} requires only one homomorphic multiplication, $1+\log m$ additions, and $\log m$ automorphisms.
+
+To simplify the process of verifying \cref{eq:commitopen_b}, we restrict $\pv{s}$ and $\pv{r}$ to have $\|\vv{\sigma}(\pv{s})\|_{\infty}=\|\vv{\sigma}(\pv{r})\|_{\infty}=1$, by chosen two random vectors $\vv{s},\vv{r}\from \{-1,0,1\}^{l.d}$ and canonical embedding them in $\pv{s}$ and $\pv{r}$, respectively. The verifier leverages the lemma \ref{lm:sign} to check that every slot of the opener $\vv{\sigma}(\p{o})_i \in \{-1,0,1\}$, and
+the norm inequalities\cite{damgardMultipartyComputationSomewhat2012} to ensure that the norm
+\[\|\pv{o}\|\leq\sqrt{d.(l+1)}\|\p{o}\|_{\infty}\leq\sqrt{d.(l+1)}\|\vv{\sigma}(\p{o})\|_{\infty}\leq\sqrt{d.(l+1)}\]
+
+The commitment is statistically hiding and computationally binding, provided that $RSIS_{d,p,l,d(l+1)}$ is hard. From \cref{eq:rsisbound} we must set $d,l\geq\log p$ and $p$ so that the bound 
+\[B=\sqrt{d.(l+1)}<\textsf{min}(p,2^{\sqrt{4d(l+1)\log{p}\log{\delta}}})\]
+
+For reasons that will be evident in the next section, the plaintext modulus $p$ can be set to a prime number $p\approx O(2^{16})$. Setting $l$ to the minimum admissible value $l=16$, we have $d\ge 1$ for a hermit value $\delta=1.0043$. Choosing $d=4$ ensures a large enough commitment ($2^{64}$) that is not easily guessable. Therefore, the commitment takes only four slots in the credential, and the opening $2.4.16=128$ slots in the encrypted presentation message $\enc{\vv{\sigma}(m)}$. 
+
+As usual, the commitment $\pc$ is the holder's identifier on the issuer. The holder may be known by different commitments $\pc'=\inprod{\pv{a}}{\pv{s}}+\inprod{\pv{b}}{\pv{r}'}$ to the same secret $\pv{s}$, in different issuers, by using different randomizations $\pv{r}'$. In this context, proving the ownership of two credentials from different issuers requires only extending the opener $\pv{o}=(\pv{s},\pv{r},\pv{r}')$ to include both randomizations.

@@ -1,0 +1,84 @@
+\subsection{Notation}
+
+A number is denoted by a lowercase letter, for example, $z \in \Z$. We denote generic sets by a capital letter $S$ and the size of $S$ by $|S|$. The vectors will be written in column form using the arrow notation $\vvv$, where $v_i$ denotes the $i^{th}$ element. The inner product of two vectors is denoted by $\inprod{\vx}{\vy}=\vx^T\vy$. Unless stated otherwise, the norm of a vector $\vvv$ is the $l_2$ norm and is denoted by $\|\vvv\|$. The set of residue classes modulo $q$ is denoted by $\Z_q$, and the class representatives of $\Z_q$ are taken from the half-open interval $[-q/2, q/2)$. 
+
+Let $A \in \Z_q^{n\times m}$, denote 
+\[\Lambda^{\perp}_A = \{\vz \in \Z^m :A\vz=\0 \bmod q\}\] as the q-ary lattice of all elements $\vz$ that satisfy the relation $A\vz=\0 \bmod q$. 
+
+A random variable $x$ sampled from a distribution $\D$ is $x \from \D$. 
+For a vector $\vvv \in \R^n$, a positive real $s$, and a lattice $\Lambda \subset \R^n$, let $\D_{\Lambda,\vvv,s}$ denote the n-dimensional discrete Gaussian distribution over $\Lambda$, centered at $\vvv$, with parameter $s$. We use $\U_{S}$ to denote a discrete uniform distribution over a set $S$, $\T$ denotes a discrete ternary uniform distribution over $\{-1, 0, 1\}$, and $\chi$ denotes an error distribution $\D_{\Lambda,\0,\sigma}$, with $\sigma$ satisfying the \ac{RLWE} security reduction \cite{lyubashevskyIdealLatticesLearning2010} for the security parameter $\lambda$. The default value $\sigma$ in the HELIB\footnote{\url{https://github.com/homenc/HElib}} and PALISADE\footnote{\url{https://gitlab.com/palisade/palisade-release}} libraries is $\sigma=3.2$.
+
+We will use the following simple lemmas, for which we sketch the proof of the first.
+\begin{lemma}\label{lm:binary}
+For any odd prime number $p$ and $0\leq x < p$,  $x(x-1)=0 \bmod p$ iff $x=0$ or $x=1$.
+\end{lemma}
+The proof is straightforward. Since $p$ is prime and $x(x-1)=k.p$ for some $k\in\Z$ then either $x=r.p$ or $x-1=r.p$ for some $r\in \Z$, and because the only $r \in \Z$ satisfying $0\leq x < p$ is $r=0$, then $x=0$ or $x=1$
+
+\begin{lemma}\label{lm:sign}
+For any odd prime number $p$ and $-p/2\leq x < p/2$,  $(x+1)(x-1)=0 \bmod p$ iff $x=-1$ or $x=1$ and $x(x+1)(x-1)=0 \bmod p$ iff $x=0, x=-1$ or $x=1$.
+\end{lemma}
+
+\subsection{Cyclotomic Rings}
+
+Let $\intring = \Z[X]/\langle \cyclpoly{m} \rangle$ be the cyclotomic ring, isomorphic to the extension field $\Q(\xi_m)$ constructed by adjoining a primitive $m^{th}$ root of unity, where $m$ is a positive integer and $\cyclpoly{m}(X)$ is the $m^{th}$ cyclotomic polynomial, and let $\intring_q=\Z_q[X]/\cyclpoly{m}(X)$ be the module $q$ cyclotomic polynomial. Our implementation uses $\cyclpoly{m}(X) = x^d+1$, with $m=2d$ and $d$ a power of 2. Whenever relevant, we denote the underlying ring with both parameters by $\intring_{d,q}=\Z_q[X]/(x^d+1)$.
+
+We denote by bold lowercase letters the elements of $\pa \in \intring$ and by $\pv{a}$ the vector of elements of $\intring$. The $i^{th}$ element of a vector $\pv{a}$ will be denoted by $\pa_i$ and the $j^{th}$ coefficient of polynomial $\pa$ by $a_j$. Similarly, $a_{i,j}$ will denote the $j^{th}$ coefficient of the $i^{th}$ polynomial of a vector $\pv{a}$. The $l_2$ norm $\|\pv{a}\|$ is defined as $\|\pv{a}\|=\sqrt{\sum a_{i,j}^2}$ and the expansion factor of $\intring$ is defined as $\expfactor = \max{\|\inprod{\pv{a}}{\pv{b}}\|/(\|\pv{a}\|.\|\pv{b}\|) : \pv{a}, \pv{b} \in \intring^k}$. 
+
+Let $n=\eulerphi{m}$ where $\phi$ is Euler’s totient function, and $q > 1$ be a number coprime to $m$, then $\cyclpoly{m}(X)$ splits modulo $q$ into $l_{\Phi}$ irreducible factors of same degree $d$, i.e. $\cyclpoly{m}(X) = \prod_{i=1}^{l_{\Phi}} F_i(X) \bmod q$, where $\delta$ is the order of $q$ modulo $m$, and $l_{\Phi} = n/\delta$. Then by \ac{CRT}, the modulo $q$ cyclotomic polynomial $\intring_q = \Z_q[X]/\cyclpoly{m}(X)$ is congruent with $\intring_q \cong \prod_{i=1}^{l_{\Phi}} \Z_q[X]/\langle F_i(X) \rangle \bmod q$. Each quotient ring $\Z_q[X]/\langle F_i(X) \rangle$ constitutes a \ac{SIMD} slot, isomorphic to the field $\F_{q^{\delta}}$. Therefore, the additions and multiplications of rings in $\intring_q$ result in the corresponding coefficient-wise operations of the respective slots. We denote by $\vv{\sigma}(\pa)$ the canonical embedding vector of the polynomial $\pa$ and by $\sigma(\pa)_i$ the embedded slot $i^{th}$ in the polynomial $\pa$. Let $\pv{a} \in \intring^n_{d,q}$, we denote by $\vv{\sigma}(\pv{a}) = [\vv{\sigma}(\pa_0),\ldots,\vv{\sigma}(\pa_{n-1})]$, the concatenation of the canonical embedding in every polynomial $\pa_i$. 
+
+We will use canonical embedding extensively to pack different attributes into a polynomial, and even to pack smaller polynomials $\pa,\pb \in \intring_{d,q}$ into a larger polynomial $\pc \in \intring_{d',q}$. Assume that $d|d'$ and $q \bmod 2d = 1$ both rings are fully split into $d$ and $d'$  slots, isomorphic to the field $\F_q$. We say that $\pc \in \intring_{d',q}$ embeds the polynomials $\pa,\pb \in \intring_{d,q}$ if $\vv{\sigma}(\pc)=[\vv{0},\vv{\sigma}(\pa),\vv{\sigma}(\pb)]$, where $\vv{0}$ is a padding vector.
+
+\subsection{Hard Problems}
+
+The security of the proposed schema is based on two well-known computational problems, Ring-SIS ($\RSIS$) \cite{peikertEfficientCollisionResistantHashing2006}\cite{lyubashevskyGeneralizedCompactKnapsacks2006} and Ring-LWE (\ac{RLWE}) \cite{lyubashevskyIdealLatticesLearning2010}.
+
+\begin{definition}
+($\RSIS_{d,q,m,\beta}$ \cite{langloisWorstcaseAveragecaseReductions2015}) Given $\pv{a}\in\intring_{d,q}^m$ chosen independently of the uniform distribution, with $m\geq \log q$, find $\pv{z}\in\intring_{d,q}^m$ such that $\inprod{a}{z} = 0 \mod q$ and $0<\|\pv{z}\|\leq\beta$. An adversary $\A$ is said to have advantage $\epsilon$ in solving $\RSIS_{d,q,m,\beta}$ if it is able to generate a vector $\pv{z}\in\intring_{d,q}^m$ with norm bounded by $0<\|\pv{z}\|\leq\beta$ such that $\inprod{a}{z} = 0 \mod q$, with a non-negligible probability.
+\end{definition}
+
+\begin{definition}
+($\RLWE_{d,q,m,\sigma}$ \cite{langloisWorstcaseAveragecaseReductions2015}) Let $\pa,\pb \in \intring_{d,q}$ be two uniformly random polynomials and let $\ps,\pe \in \intring_{d,q}$ be sampled from the Gaussian distribution $\chi$. An adversary $\A$ is said to have an advantage over $\RLWE_{d,q,m,\sigma}$ if it is able to distinguish $(\pa,\pb)$ from $(\pa,\pa.\ps+\pe)$, with a non-negligible probability.
+\end{definition}
+
+
+\subsection{Homomorphic Encryption}
+
+The presented anonymous credential solution is adaptable and can be implemented using two homomorphic encryption schemes: BGV and BFV. These schemes are quite similar, with the primary distinction being how they handle message scaling and error during encryption. Both the $\BGV$ and $\BFV$ schemes are compatible within the framework. The encryption and decryption procedures for both schemes are outlined using the adopted notation to provide a comprehensive overview\footnote{We omit the remaining homomorphic operations because our solution will not impact them.}.
+
+\begin{itemize}[label={--}]
+    \item $(\pv{sk},\pv{pk}) \from \bkw{KeyGen}(p, l, 1^\lambda)$: Both schemas take the plaintext module $p$, the multiplication depth $l$ and the security factor $\lambda$ as input for the key generation. In both cases, every element is taken from a ring $\intring_q = \Z_q/\cyclpoly{m}(X)$,  with $m=m(\lambda)$ satisfying the security parameter $\lambda$, and $q=q(l,p,m)$ satisfying the multiplication depth $d$. The secret key $\pv{sk} = [-\ps,\p{1}]^T \in \intring_q^2$ is a vector of polynomials, where $\ps$ is a random polynomial with coefficients in $\T$, and $\p{1}$ is a constant polynomial. The public key $\pv{pk}=[\pa,\pb]^T$ is a pair of polynomials $\pa \from \U_{\intring_q}$ and $\pb=\pa.\ps+\tau.\pe \bmod q$, where $\pe \from \chi$, and 
+    $\tau = \begin{cases}
+        p & \textrm{if } \BGV\\
+        1 & \textrm{if } \BFV
+    \end{cases}$
+    \item $\pv{c} \from \bkw{Encrypt}(\pv{pk},\ppm)$: The encryption procedure takes the public key $\pv{pk}$ and a polynomial $\ppm \in \intring_p$ encoding the message and outputs a ciphertext $\pv{c} = [\pc_0,\pc_1]^T$ with a pair of polynomials $\pc_0 = \pa.\pu+\tau.\pe_1$ and $\pc_1=\pb.\pu+\tau.\pe_2+\Delta.\ppm$ where $\pu \in \intring_q$ is a polynomial with coefficients taken from $\T$, $\pe_1, \pe_2 \from \chi$ and 
+        $\Delta = \begin{cases}
+        1 & \textrm{if } \BGV\\
+        \floor{q/p} & \textrm{if } \BFV
+    \end{cases}$
+    \item $\ppm \from \bkw{Decrypt}(\pv{sk},\pv{c})$: The decryption process takes the secret key $\pv{sk}$ and the ciphertext $\pv{c}$ and outputs the message $\ppm \in \intring_p$, $\ppm=\Gamma(\p{\rho})$, with \[\p{\rho}=\inprod{\pv{sk}}{\pv{c}}=\Delta.\ppm+\tau.\p{\partial} \bmod q\] and \[\Gamma(\px) = \begin{cases} \px \bmod p & \textrm{if } \BGV\\ \round{p.\px/q} \bmod p & \textrm{if } \BFV\end{cases}\]
+    In both schemas, the decryption algorithm holds if the ciphertext error level $\|\p{\partial}\|_{\infty} < q/2p$.
+\end{itemize}
+We denote by $\enc{\{x_1,\ldots,x_n\}}$ the encryption of a packed vector $\{x_1,\ldots,x_n\}$ isomorphic to the field $\F^n_{p^\delta}$, with either $\BGV$ or $\BFV$, and by $\enc{\pa}=\enc{\vv{\sigma}(\pa)}$ the encryption of a polynomial $\pa \in \intring_{d,p}$ encoding a cannonical embedding vector $\vv{\sigma}(\pa)$ isomorphic to the field $\F^n_{p^\delta}$. In most cases $p$ and $q$ denote the plaintext and ciphertext modulus of encryption, respectively; however, in some cases, we will encrypt with $\beta.p$ and $\beta.q$, which we denote by $\senc{\pa}{\beta}$. We denote with an overbar $\overline{\bkw{Function}}$ the homomorphic computation of a function with the same name $\bkw{Function}$.
+
+\subsection{Lattice Trapdoors}
+In lattice-based encryption, a ``trapdoor'' is a crucial tool that simplifies the solution of complex problems such as LWE or SIS and their counterparts in ring-based cryptography. These problems are inherently difficult without a trapdoor. The key idea behind lattice trapdoors is that LWE and SIS problems become computationally easy when the lattice has bases characterized by short orthogonal vectors, known as "good bases." Conversely, they become computationally hard when the lattice has bases that are not ``good'', referred to as ``bad'' bases"
+
+The ingenious approach involves generating both ``good'' and ``bad'' bases simultaneously. The ``bad'' base is made public, while the ``good'' base is kept confidential as the trapdoor. In many cases, the ``good'' base is a well-known fixed base, and the trapdoor is represented by the unimodular transformation that converts one base into the other. Notably, Micciancio and Peikert's \cite{micciancioTrapdoorsLatticesSimpler2012} solution has been one of the most efficient trapdoor generation methods, demonstrating its effectiveness in solving LWE problems and generating secure solutions for SIS problems.
+
+We are mainly interested in sampling RSIS solutions, that is, finding a polynomial vector $\pv{s} \in \intring_q^{k+2}$, with a short norm such that $\pv{a}.\pv{s}\cong \pc$, for any polynomial $\pc \in \intring_q$. Let
+\[\pv{a},\pv{r} \from \bkw{TrapGen}(\lambda)\]
+denote the generation of the ``bad'' ($\pv{a}$) and ``good''($\pv{r}$) basis\footnote{$\pv{r}$ is not exactly a good base but one may be generated from it.}, and let
+\[\pv{s}\from \bkw{TrapSampl}(\pv{a},\pv{r},\pc)\]
+denote the sampling of a polynomial vector $\pv{s}$, such that the Euclidean norm $\|\pv{s}\|<B_t$ is bounded by some parameter $B_t$. The sampling algorithm of \cite{micciancioTrapdoorsLatticesSimpler2012}
+requires $q=b^k$ for some $k \in \Z$, which is not always the most appropriate choice of $q$ to be used in $\BGV$ or $\BFV$, since we need $q$ to be as small as possible for efficiency reasons. Also, we use the solution proposed by \cite{cousinsImplementingConjunctionObfuscation2018}. The bound $B_t=\textrm{max } \|\pv{s}\|$ of the Euclidean norm for the preimage samples sampled with this procedure is 
+\begin{equation}\label{eq:bound}
+    B_t<s\sqrt{d(k+2)}
+\end{equation}
+where $s=1.3\sigma^2(b+1)(\sqrt{d.k}+\sqrt{2d}+4.7)$ is the spectral bound, and $\sigma=\sqrt{\log_2{2d/\epsilon)}/\pi}$ is the smoothing parameter from which the trapdoor polynomials are generated. 
+
+From \cite{micciancioLatticebasedCryptography2009} we know that the bound $\beta$ that makes $\RSIS_{d,q,m,\beta}$ hard is given by
+\begin{equation}\label{eq:rsisbound}
+\beta < \textsf{min}(p,2^{\sqrt{4dm\log{q}\log{\delta}}})
+\end{equation}
+where $\delta$ is the hermite value, which depends on the security parameter $\lambda$. Whenever necessary, we will use $\delta=1.0043$. Therefore, the parameters should be chosen such that $B_t \leq \beta$.

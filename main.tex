@@ -1,0 +1,94 @@
+\documentclass[sigconf,anonymous,review]{acmart}
+\usepackage{hyperref}
+\usepackage{popets}
+
+%\usepackage{amsmath,amssymb,amsfonts,bm}
+\usepackage{bm}
+%\usepackage{graphicx}
+
+\usepackage{pgfplots}
+\usepackage{acronym}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{multirow}
+\usepackage{tabularx}
+%\usepackage{enumitem}
+%\usepackage[e]{esvect}
+\usepackage{subcaption}
+%\usepackage{comment}
+\usepackage[perpage]{footmisc}
+\usepackage{cleveref}
+\usepackage{enumitem}
+
+% Copyright
+\setcopyright{popets}
+\copyrightyear{YYYY}
+
+% Issue info
+\acmYear{YYYY}
+\acmVolume{YYYY}
+\acmNumber{X}
+\acmDOI{XXXXXXX.XXXXXXX}
+\acmISBN{}
+\acmConference{Proceedings on Privacy Enhancing Technologies}
+\settopmatter{printacmref=false,printccs=false,printfolios=true}
+
+\input{macros}
+
+\begin{document}
+
+\title{Quantum-safe Anonymous Credentials from Homomorphic Encryption}
+
+\author{Carlos Ribeiro}
+\orcid{xxx}
+\affiliation{%
+  \institution{Instituto Superior Técnico}
+  \city{Lisbon}
+  \country{Portugal}}
+\email{carlos.ribeiro@tecnico.ulisboa.pt}
+
+
+
+\begin{abstract}
+\input{abstract}
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+\input{intro}
+
+\section{Related Work}
+\input{rwork}
+
+\section{Proposed Solution}\label{sec:solution}
+\input{solution2}
+
+\section{Background}
+\input{background}
+
+\section{Verifiable Decryption}\label{sec:otk}
+\input{sck}
+
+\section{Homomorphic Comparison}\label{sec:comparison}
+\input{comparison}
+
+\section{Proof of ownership}\label{sec:owner}
+\input{ownership}
+
+\section{Homomorphic Verification of Encrypted Signatures}\label{sec:sig}
+\input{signature}
+
+\section{Conclusion}
+\input{conclusion}
+
+%\bibliographystyle{IEEEtran}
+\bibliographystyle{ACM-Reference-Format}
+%\bibliographystyle{alpha}
+\bibliography{refs.bib} 
+
+\appendix
+
+\input{appendix}
+
+\end{document}

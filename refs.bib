@@ -1,0 +1,1174 @@
+@misc{agrawalPracticalRoundOptimalLatticeBased2021,
+  title = {Practical, {{Round-Optimal Lattice-Based Blind Signatures}}},
+  author = {Agrawal, Shweta and Kirshanova, Elena and Stehle, Damien and Yadav, Anshu},
+  year = {2021},
+  number = {1565},
+  urldate = {2023-01-11},
+  abstract = {Blind signatures are a fundamental cryptographic primitive with numerous practical applications. While there exist many practical blind signatures from number-theoretic assumptions, the situation is far less satisfactory from post-quantum assumptions. In this work, we provide the first overall practical, lattice-based blind signature, supporting an unbounded number of signature queries and additionally enjoying optimal round complexity. We provide a detailed estimate of parameters achieved -- we obtain a signature of size slightly above 45KB, for a core-SVP hardness of 109 bits. The run-times of the signer, user and verifier are also very small. Our scheme relies on the Gentry, Peikert and Vaikuntanathan signature [STOC'08] and non-interactive zero-knowledge proofs for linear relations with small unknowns, which are significantly more efficient than their general purpose counterparts. Its security stems from a new and arguably natural assumption which we introduce, called the one-more-ISIS assumption. This assumption can be seen as a lattice analogue of the one-more-RSA assumption by Bellare et al [JoC'03]. To gain confidence in our assumption, we provide a detailed analysis of diverse attack strategies.},
+  keywords = {Blind signatures,lattices,practical,round-optimal},
+  file = {/Users/carlosribeiro/Zotero/storage/HKVFSXR7/Agrawal et al. - 2021 - Practical, Round-Optimal Lattice-Based Blind Signa.pdf}
+}
+
+@inproceedings{ajtaiGeneratingHardInstances1996,
+  title = {Generating Hard Instances of Lattice Problems (Extended Abstract)},
+  booktitle = {Proceedings of the Twenty-Eighth Annual {{ACM}} Symposium on {{Theory}} of {{Computing}}},
+  author = {Ajtai, M.},
+  year = {1996},
+  month = jul,
+  series = {{{STOC}} '96},
+  pages = {99--108},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/237814.237838},
+  urldate = {2024-02-12},
+  isbn = {978-0-89791-785-8},
+  file = {/Users/carlosribeiro/Zotero/storage/ELU6X9AK/Ajtai - 1996 - Generating hard instances of lattice problems (ext.pdf}
+}
+
+@article{banaszczykNewBoundsTransference1993,
+  title = {New Bounds in Some Transference Theorems in the Geometry of Numbers},
+  author = {Banaszczyk, W.},
+  year = {1993},
+  month = dec,
+  journal = {Mathematische Annalen},
+  volume = {296},
+  number = {1},
+  pages = {625--635},
+  issn = {1432-1807},
+  doi = {10.1007/BF01445125},
+  urldate = {2023-01-02},
+  langid = {english},
+  keywords = {11H06,11H60,52C07}
+}
+
+@inproceedings{banerjeeNewImprovedKeyHomomorphic2014,
+  title = {New and {{Improved Key-Homomorphic Pseudorandom Functions}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2014},
+  author = {Banerjee, Abhishek and Peikert, Chris},
+  editor = {Garay, Juan A. and Gennaro, Rosario},
+  year = {2014},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {353--370},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-662-44371-2_20},
+  abstract = {A key-homomorphic pseudorandom function (PRF) family \{Fs: D\,{\textrightarrow}\,R\} allows one to efficiently compute the value Fs\,+\,t(x) given Fs(x) and Ft(x). Such functions have many applications, such as distributing the operation of a key-distribution center and updatable symmetric encryption. The only known construction of key-homomorphic PRFs without random oracles, due to Boneh et al. (CRYPTO~2013), is based on the learning with errors (LWE) problem and hence on worst-case lattice problems. However, the security proof relies on a very strong LWE assumption (i.e., very large approximation factors), and hence has quite inefficient parameter sizes and runtimes.},
+  isbn = {978-3-662-44371-2},
+  langid = {english},
+  keywords = {Homomorphic Encryption,Pseudorandom Function,Public Parameter,Random Oracle,Security Proof},
+  file = {/Users/carlosribeiro/Zotero/storage/NPHZE3K3/Banerjee and Peikert - 2014 - New and Improved Key-Homomorphic Pseudorandom Func.pdf}
+}
+
+@misc{banerjeePseudorandomFunctionsLattices2011,
+  title = {Pseudorandom {{Functions}} and {{Lattices}}},
+  author = {Banerjee, Abhishek and Peikert, Chris and Rosen, Alon},
+  year = {2011},
+  number = {401},
+  urldate = {2023-01-12},
+  abstract = {We give direct constructions of pseudorandom function (PRF) families based on conjectured hard lattice problems and learning problems. Our constructions are asymptotically efficient and highly parallelizable in a practical sense, i.e., they can be computed by simple, relatively {\textbackslash}emph\{small\} low-depth arithmetic or boolean circuits (e.g., in NCor even TC). In addition, they are the first low-depth PRFs that have no known attack by efficient quantum algorithms. Central to our results is a new ``derandomization'' technique for the learning with errors ({\textbackslash}lwe) problem which, in effect, generates the error terms deterministically.Minor changes to ring-LWE background.},
+  keywords = {lattices,pseudorandom functions},
+  file = {/Users/carlosribeiro/Zotero/storage/GL6MRT9B/Banerjee et al. - 2011 - Pseudorandom Functions and Lattices.pdf}
+}
+
+@misc{bansarkhaniImprovementEfficientImplementation,
+  title = {Improvement and {{Efficient Implementation}} of a {{Lattice-based Signature Scheme}}},
+  author = {Bansarkhani, Rachid El and Buchmann, Johannes},
+  urldate = {2022-10-11},
+  abstract = {Lattice-based signature schemes constitute an interesting alternative to RSA and discrete logarithm based systems which may become insecure in the future, for example due to the possibility of quantum attacks. A particularly interesting scheme in this context is the GPV signature scheme [GPV08] combined with the trapdoor construction from Micciancio and Peikert [MP12] as it admits strong security proofs and is believed to be very efficient in practice. This paper confirms this belief and shows how to improve the GPV scheme in terms of space and running time and presents an implementation of the optimized scheme. A ring variant of this scheme is also introduced which leads to a more efficient construction. Experimental results show that GPV with the new trapdoor construction is competitive to the signature schemes that are currently used in practice.},
+  keywords = {Implementations,Lattice-Based Signatures,Practicality}
+}
+
+@misc{beullensGroupSignaturesMore,
+  title = {Group {{Signatures}} and {{More}} from {{Isogenies}} and {{Lattices}}: {{Generic}}, {{Simple}}, and {{Efficient}}},
+  shorttitle = {Group {{Signatures}} and {{More}} from {{Isogenies}} and {{Lattices}}},
+  author = {Beullens, Ward and Dobson, Samuel and Katsumata, Shuichi and Lai, Yi-Fu and Pintore, Federico},
+  urldate = {2023-01-11},
+  abstract = {We construct an efficient dynamic group signature (or more generally an accountable ring signature) from isogeny and lattice assumptions. Our group signature is based on a simple generic construction that can be instantiated by cryptographically hard group actions such as the CSIDH group action or an MLWE-based group action. The signature is of size \$O({\textbackslash}log N)\$, where \$N\$ is the number of users in the group. Our idea builds on the recent efficient OR-proof by Beullens, Katsumata, and Pintore (Asiacrypt'20), where we efficiently add a proof of valid ciphertext to their OR-proof and further show that the resulting non-interactive zero-knowledge proof system is online extractable. Our group signatures satisfy more ideal security properties compared to previously known constructions, while simultaneously having an attractive signature size. The signature size of our isogeny-based construction is an order of magnitude smaller than all previously known post-quantum group signatures (e.g., 6.6 KB for 64 members). In comparison, our lattice-based construction has a larger signature size (e.g., either 126 KB or 89 KB for 64 members depending on the satisfied security property). However, since the \$O({\textbackslash}cdot)\$-notation hides a very small constant factor, it remains small even for very large group sizes, say \$2\^\{20\}\$.Updated (Oct.28, 2021): Updated the references.},
+  keywords = {Accountable Ring Signature,Group Signature,Isogeny-based cryptography,Lattice-based cryptography,Post-Quantum cryptography}
+}
+
+@inproceedings{blazyEfficientImplementationPostQuantum2023,
+  title = {Efficient {{Implementation}} of a {{Post-Quantum Anonymous Credential Protocol}}},
+  booktitle = {Proceedings of the 18th {{International Conference}} on {{Availability}}, {{Reliability}} and {{Security}}},
+  author = {Blazy, Olivier and Chevalier, C{\'e}line and Renaut, Guillaume and Ricosset, Thomas and Sageloli, Eric and Senet, Hugo},
+  year = {2023},
+  month = aug,
+  pages = {1--11},
+  publisher = {{ACM}},
+  address = {{Benevento Italy}},
+  doi = {10.1145/3600160.3600188},
+  urldate = {2023-09-14},
+  isbn = {9798400707728},
+  langid = {english}
+}
+
+@inproceedings{bonehFunctionalEncryptionDefinitions2011,
+  title = {Functional {{Encryption}}: {{Definitions}} and {{Challenges}}},
+  shorttitle = {Functional {{Encryption}}},
+  booktitle = {Theory of {{Cryptography}}},
+  author = {Boneh, Dan and Sahai, Amit and Waters, Brent},
+  editor = {Ishai, Yuval},
+  year = {2011},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {253--273},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-19571-6_16},
+  abstract = {We initiate the formal study of functional encryption by giving precise definitions of the concept and its security. Roughly speaking, functional encryption supports restricted secret keys that enable a key holder to learn a specific function of encrypted data, but learn nothing else about the data. For example, given an encrypted program the secret key may enable the key holder to learn the output of the program on a specific input without learning anything else about the program.},
+  isbn = {978-3-642-19571-6},
+  langid = {english},
+  keywords = {Cryptology ePrint Archive,Encrypt Data,Encryption Scheme,Random Oracle,Random Oracle Model},
+  file = {/Users/carlosribeiro/Zotero/storage/ES7WHLE3/Boneh et al. - 2011 - Functional Encryption Definitions and Challenges.pdf}
+}
+
+@inproceedings{bonehKeyHomomorphicPRFs2013,
+  title = {Key {{Homomorphic PRFs}} and {{Their Applications}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2013},
+  author = {Boneh, Dan and Lewi, Kevin and Montgomery, Hart and Raghunathan, Ananth},
+  editor = {Canetti, Ran and Garay, Juan A.},
+  year = {2013},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {410--428},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-40041-4_23},
+  abstract = {A pseudorandom function \$F: \{{\textbackslash}mathcal K\} {\textbackslash}times\{{\textbackslash}mathcal X\} {\textbackslash}to\{{\textbackslash}mathcal Y\}\$is said to be key homomorphic if given F(k1,x) and F(k2,x) there is an efficient algorithm to compute F(k1\,{$\oplus$}\,k2, x), where {$\oplus$} denotes a group operation on k1 and k2 such as xor. Key homomorphic PRFs are natural objects to study and have a number of interesting applications: they can simplify the process of rotating encryption keys for encrypted data stored in the cloud, they give one round distributed PRFs, and they can be the basis of a symmetric-key proxy re-encryption scheme. Until now all known constructions for key homomorphic PRFs were only proven secure in the random oracle model. We construct the first provably secure key homomorphic PRFs in the standard model. Our main construction is based on the learning with errors (LWE) problem. We also give a construction based on the decision linear assumption in groups with an {$\mathscr{l}$}-linear map. We leave as an open problem the question of constructing standard model key homomorphic PRFs from more general assumptions.},
+  isbn = {978-3-642-40041-4},
+  langid = {english},
+  keywords = {Key homomorphism,Learning with errors,Pseudorandom functions},
+  file = {/Users/carlosribeiro/Zotero/storage/3F55SCLP/Boneh et al. - 2013 - Key Homomorphic PRFs and Their Applications.pdf}
+}
+
+@misc{bonehObliviousPseudorandomFunctions2020,
+  title = {Oblivious {{Pseudorandom Functions}} from {{Isogenies}}},
+  author = {Boneh, Dan and Kogan, Dmitry and Woo, Katharine},
+  year = {2020},
+  number = {1532},
+  urldate = {2023-01-12},
+  abstract = {An oblivious PRF, or OPRF, is a protocol between a client and a server, where the server has a keyfor a secure pseudorandom function, and the client has an inputfor the function. At the end of the protocol the client learns, and nothing else, and the server learns nothing. An OPRF is verifiable if the client is convinced that the server has evaluated the PRF correctly with respect to a prior commitment to. OPRFs and verifiable OPRFs have numerous applications, such as private-set-intersection protocols, password-based key-exchange protocols, and defense against denial-of-service attacks. Existing OPRF constructions use RSA-, Diffie-Hellman-, and lattice-type assumptions. The first two are not post-quantum secure. In this paper we construct OPRFs and verifiable OPRFs from isogenies. Our main construction uses isogenies of supersingular elliptic curves overand tries to adapt the Diffie-Hellman OPRF to that setting. However, a recent attack on supersingular-isogeny systems due to Galbraith et al. [ASIACRYPT 2016] makes this approach difficult to secure. To overcome this attack, and to validate the server's response, we develop two new zero-knowledge protocols that convince each party that its peer has sent valid messages. With these protocols in place, we obtain an OPRF in the SIDH setting and prove its security in the UC framework. Our second construction is an adaptation of the Naor-Reingold PRF to commutative group actions. Combining it with recent constructions of oblivious transfer from isogenies, we obtain an OPRF in the CSIDH setting.},
+  keywords = {isogeny-based cryptography,oblivious pseudorandom functions},
+  file = {/Users/carlosribeiro/Zotero/storage/458TC4EI/Boneh et al. - 2020 - Oblivious Pseudorandom Functions from Isogenies.pdf}
+}
+
+@misc{bootleFoundationsFullyDynamic,
+  title = {Foundations of {{Fully Dynamic Group Signatures}}},
+  author = {Bootle, Jonathan and Cerulli, Andrea and Chaidos, Pyrros and Ghadafi, Essam and Groth, Jens},
+  urldate = {2023-01-11},
+  abstract = {Group signatures allow members of a group to anonymously sign on behalf of the group. Membership is administered by a designated group manager. The group manager can also reveal the identity of a signer if and when needed to enforce accountability and deter abuse. For group signatures to be applicable in practice, they need to support fully dynamic groups, i.e., users may join and leave at any time. Existing security definitions for fully dynamic group signatures are informal, have shortcomings, and are mutually incompatible. We fill the gap by providing a formal rigorous security model for fully dynamic group signatures. Our model is general and is not tailored towards a specific design paradigm and can therefore, as we show, be used to argue about the security of different existing constructions following different design paradigms. Our definitions are stringent and when possible incorporate protection against maliciously chosen keys. We consider both the case where the group management and tracing signatures are administered by the same authority, i.e.{\textasciitilde}a single group manager, and also the case where those roles are administered by two separate authorities, i.e. a group manager and an opening authority. We also show that a specialization of our model captures existing models for static and partially dynamic schemes. In the process, we identify a subtle gap in the security achieved by group signatures using revocation lists. We show that in such schemes new members achieve a slightly weaker notion of traceability. The flexibility of our security model allows to capture such relaxation of traceability.Minor edits},
+  keywords = {Group Signatures,Security definitions}
+}
+
+@inproceedings{bootleFrameworkPracticalAnonymous2023,
+  title = {A {{Framework}} for~{{Practical Anonymous Credentials}} from~{{Lattices}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2023},
+  author = {Bootle, Jonathan and Lyubashevsky, Vadim and Nguyen, Ngoc Khanh and Sorniotti, Alessandro},
+  editor = {Handschuh, Helena and Lysyanskaya, Anna},
+  year = {2023},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {384--417},
+  publisher = {{Springer Nature Switzerland}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-031-38545-2_13},
+  abstract = {We present a framework for building practical anonymous credential schemes based on the hardness of lattice problems. The running time of the prover and verifier is independent of the number of users and linear in the number of attributes. The scheme is also compact in practice, with the proofs being as small as a few dozen kilobytes for arbitrarily large (say up to \$\$2\^\{128\}\$\$2128) numbers of users with each user having several attributes. The security of our scheme is based on a new family of lattice assumptions which roughly states that given short pre-images of random elements in some set S, it is hard to create a pre-image for a fresh element in such a set. We show that if the set admits efficient zero-knowledge proofs of knowledge of a commitment to a set element and its pre-image, then this yields practically-efficient privacy-preserving primitives such as blind signatures, anonymous credentials, and group signatures. We propose a candidate instantiation of a function from this family which allows for such proofs and thus yields practical lattice-based primitives.},
+  isbn = {978-3-031-38545-2},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/ZFVM5TCI/Bootle et al. - 2023 - A Framework for Practical Anonymous Credentials fr.pdf}
+}
+
+@incollection{boschiniEfficientPostquantumSNARKs2020,
+  title = {Efficient {{Post-quantum SNARKs}} for {{RSIS}} and {{RLWE}} and {{Their Applications}} to {{Privacy}}},
+  booktitle = {Post-{{Quantum Cryptography}}},
+  author = {Boschini, Cecilia and Camenisch, Jan and Ovsiankin, Max and Spooner, Nicholas},
+  editor = {Ding, Jintai and Tillich, Jean-Pierre},
+  year = {2020},
+  volume = {12100},
+  pages = {247--267},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-030-44223-1_14},
+  urldate = {2023-09-14},
+  abstract = {In this paper we give efficient statistical zero-knowledge proofs (SNARKs) for Module/Ring LWE and Module/Ring SIS relations, providing the remaining ingredient for building efficient cryptographic protocols from lattice-based hardness assumptions. We achieve our results by exploiting the linear-algebraic nature of the statements supported by the Aurora proof system (Ben-Sasson et al.), which allows us to easily and efficiently encode the linear-algebraic statements that arise in lattice schemes and to side-step the issue of ``relaxed extractors'', meaning extractors that only recover a witness for a larger relation than the one for which completeness is guaranteed. We apply our approach to the example use case of partially dynamic group signatures and obtain a lattice-based group signature that protects users against corrupted issuers, and that produces signatures smaller than the state of the art, with signature sizes of less than 300 KB for the comparably secure version of the scheme. To obtain our argument size estimates for proof of knowledge of RLWE secret, we implemented the NIZK using libiop.},
+  isbn = {978-3-030-44222-4 978-3-030-44223-1},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/NUUIRMHS/Boschini et al. - 2020 - Efficient Post-quantum SNARKs for RSIS and RLWE an.pdf}
+}
+
+@incollection{boschiniRelaxedLatticeBasedSignatures2018,
+  title = {Relaxed {{Lattice-Based Signatures}} with {{Short Zero-Knowledge Proofs}}},
+  booktitle = {Developments in {{Language Theory}}},
+  author = {Boschini, Cecilia and Camenisch, Jan and Neven, Gregory},
+  editor = {Hoshi, Mizuho and Seki, Shinnosuke},
+  year = {2018},
+  volume = {11088},
+  pages = {3--22},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-99136-8_1},
+  urldate = {2023-09-19},
+  abstract = {Higher-level cryptographic privacy-enhancing protocols such as anonymous credentials, voting schemes, and e-cash are often constructed by suitably combining signature, commitment, and encryption schemes with zero-knowledge proofs. Indeed, a large body of protocols have been constructed in that manner from Camenisch-Lysyanskaya signatures and generalized Schnorr proofs. In this paper, we build a similar framework for lattice-based schemes by presenting a signature and commitment scheme that are compatible with Lyubashevsky's Fiat-Shamir proofs with abort, currently the most efficient zero-knowledge proofs for lattices. To cope with the relaxed soundness guarantees of these proofs, we define corresponding notions of relaxed signature and commitment schemes. We demonstrate the flexibility and efficiency of our new primitives by constructing a new lattice-based anonymous attribute token scheme and providing concrete parameters to securely instantiate this scheme.},
+  isbn = {978-3-319-98653-1 978-3-319-98654-8},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/SBP67693/Boschini et al. - 2018 - Relaxed Lattice-Based Signatures with Short Zero-K.pdf}
+}
+
+@inproceedings{boyenLatticeMixingVanishing2010,
+  title = {Lattice Mixing and Vanishing Trapdoors: {{A}} Framework for Fully Secure Short Signatures and More},
+  shorttitle = {Lattice Mixing and Vanishing Trapdoors},
+  booktitle = {International Workshop on Public Key Cryptography},
+  author = {Boyen, Xavier},
+  year = {2010},
+  pages = {499--517},
+  publisher = {{Springer}},
+  file = {/Users/carlosribeiro/Zotero/storage/QM6GDYZ3/Boyen - 2010 - Lattice mixing and vanishing trapdoors A framewor.pdf;/Users/carlosribeiro/Zotero/storage/T98WR6I2/978-3-642-13013-7_29.html}
+}
+
+@inproceedings{brakerskiFullyHomomorphicEncryption2012,
+  title = {Fully Homomorphic Encryption without Modulus Switching from Classical {{GapSVP}}},
+  booktitle = {Annual {{Cryptology Conference}}},
+  author = {Brakerski, Zvika},
+  year = {2012},
+  pages = {868--886},
+  publisher = {{Springer}}
+}
+
+@article{brakerskiLeveledFullyHomomorphic2014,
+  title = {({{Leveled}}) Fully Homomorphic Encryption without Bootstrapping},
+  author = {Brakerski, Zvika and Gentry, Craig and Vaikuntanathan, Vinod},
+  year = {2014},
+  journal = {ACM Transactions on Computation Theory (TOCT)},
+  volume = {6},
+  number = {3},
+  pages = {1--36},
+  publisher = {{ACM New York, NY, USA}}
+}
+
+@book{brandsRethinkingPublicKey2000a,
+  title = {Rethinking Public Key Infrastructures and Digital Certificates: Building in Privacy},
+  shorttitle = {Rethinking Public Key Infrastructures and Digital Certificates},
+  author = {Brands, Stefan},
+  year = {2000},
+  publisher = {{Mit Press}},
+  file = {/Users/carlosribeiro/Zotero/storage/L4EQUN8G/books.html}
+}
+
+@book{bukatyCaliforniaConsumerPrivacy2019,
+  title = {The {{California Consumer Privacy Act}} ({{CCPA}}): {{An}} Implementation Guide},
+  shorttitle = {The {{California Consumer Privacy Act}} ({{CCPA}})},
+  author = {Bukaty, Preston},
+  year = {2019},
+  month = jun,
+  edition = {Illustrated edition},
+  publisher = {{Itgp}},
+  address = {{Cambridgeshire Business Park , UK}},
+  isbn = {978-1-78778-132-0},
+  langid = {english}
+}
+
+@inproceedings{camenischAnonymousAttestationUsing2016a,
+  title = {Anonymous {{Attestation Using}} the {{Strong Diffie Hellman Assumption Revisited}}},
+  booktitle = {Trust and {{Trustworthy Computing}}},
+  author = {Camenisch, Jan and Drijvers, Manu and Lehmann, Anja},
+  editor = {Franz, Michael and Papadimitratos, Panos},
+  year = {2016},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {1--20},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-45572-3_1},
+  abstract = {Direct Anonymous Attestation (DAA) is a cryptographic protocol for privacy-protecting authentication. It is standardized in the TPM standard and implemented in millions of chips. A variant of DAA is also used in Intel's SGX. Recently, Camenisch et al.~(PKC 2016) demonstrated that existing security models for DAA do not correctly capture all security requirements, and showed a number of flaws in existing schemes based on the LRSW assumption. In this work, we identify flaws in security proofs of a number of qSDH-based DAA schemes and point out that none of the proposed schemes can be proven secure in the recent model by Camenisch et al.~(PKC 2016). We therefore present a new, provably secure DAA scheme that is based on the qSDH assumption. The new scheme is as efficient as the most efficient existing DAA scheme, with support for DAA extensions to signature-based revocation and attributes. We rigorously prove the scheme secure in the model of Camenisch et al., which we modify to support the extensions. As a side-result of independent interest, we prove that the BBS+ signature scheme is secure in the type-3 pairing setting, allowing for our scheme to be used with the most efficient pairing-friendly curves.},
+  isbn = {978-3-319-45572-3},
+  langid = {english},
+  keywords = {Basename,Direct Anonymous Attestation (DAA),Existing Security Models,LRSW Assumption,q-SDH Assumption}
+}
+
+@inproceedings{camenischDesignImplementationIdemix2002,
+  title = {Design and Implementation of the Idemix Anonymous Credential System},
+  booktitle = {Proceedings of the 9th {{ACM}} Conference on {{Computer}} and Communications Security},
+  author = {Camenisch, Jan and Van Herreweghen, Els},
+  year = {2002},
+  month = nov,
+  series = {{{CCS}} '02},
+  pages = {21--30},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/586110.586114},
+  urldate = {2023-10-04},
+  abstract = {Anonymous credential systems [8, 9, 12, 24] allow anonymous yet authenticated and accountable transactions between users and service providers. As such, they represent a powerful technique for protecting users' privacy when conducting Internet transactions. In this paper, we describe the design and implementation of an anonymous credential system based on the protocols developed by [6]. The system is based on new high-level primitives and interfaces allowing for easy integration into access control systems. The prototype was realized in Java. We demonstrate its use and some deployment issues with the description of an operational demonstration scenario.},
+  isbn = {978-1-58113-612-8},
+  keywords = {anonymous credential systems,cryptographic protocols,privacy}
+}
+
+@article{camenischEfficientAttributesAnonymous2012,
+  title = {Efficient Attributes for Anonymous Credentials},
+  author = {Camenisch, Jan and Gro{\ss}, Thomas},
+  year = {2012},
+  journal = {ACM Transactions on Information and System Security (TISSEC)},
+  volume = {15},
+  number = {1},
+  pages = {1--30},
+  publisher = {{ACM New York, NY, USA}},
+  file = {/Users/carlosribeiro/Zotero/storage/87UCUPVD/Camenisch and Groß - 2012 - Efficient attributes for anonymous credentials.pdf;/Users/carlosribeiro/Zotero/storage/R7EKVD6H/2133375.html}
+}
+
+@inproceedings{camenischEfficientGeneralizedGroup1997,
+  title = {Efficient and Generalized Group Signatures},
+  booktitle = {International {{Conference}} on the {{Theory}} and {{Applications}} of {{Cryptographic Techniques}}},
+  author = {Camenisch, Jan},
+  year = {1997},
+  pages = {465--479},
+  publisher = {{Springer}},
+  file = {/Users/carlosribeiro/Zotero/storage/AAJLAZWZ/Camenisch - 1997 - Efficient and generalized group signatures.pdf;/Users/carlosribeiro/Zotero/storage/IMWLWMU9/3-540-69053-0_32.html}
+}
+
+@inproceedings{camenischEfficientSystemNontransferable2001,
+  title = {An {{Efficient System}} for {{Non-transferable Anonymous Credentials}} with {{Optional Anonymity Revocation}}},
+  booktitle = {Advances in {{Cryptology}} {\textemdash} {{EUROCRYPT}} 2001},
+  author = {Camenisch, Jan and Lysyanskaya, Anna},
+  editor = {Pfitzmann, Birgit},
+  year = {2001},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {93--118},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/3-540-44987-6_7},
+  abstract = {A credential system is a system in which users can obtain credentials from organizations and demonstrate possession of these credentials. Such a system is anonymous when transactions carried out by the same user cannot be linked. An anonymous credential system is of significant practical relevance because it is the best means of providing privacy for users. In this paper we propose a practical anonymous credential system that is based on the strong RSA assumption and the decisional Diffie-Hellman assumption modulo a safe prime product and is considerably superior to existing ones: (1) We give the first practical solution that allows a user to unlinkably demonstrate possession of a credential as many times as necessary without involving the issuing organization. (2) To prevent misuse of anonymity, our scheme is the first to offer optional anonymity revocation for particular transactions. (3) Our scheme offers separability: all organizations can choose their cryptographic keys independently of each other. Moreover, we suggest more effective means of preventing users from sharing their credentials, by introducing all-or-nothing sharing: a user who allows a friend to use one of her credentials once, gives him the ability to use all of her credentials, i.e., taking over her identity. This is implemented by a new primitive, called circular encryption, which is of independent interest, and can be realized from any semantically secure cryptosystem in the random oracle model.},
+  isbn = {978-3-540-44987-4},
+  langid = {english},
+  keywords = {blind signatures,circular encryption,credential system,e-cash,key-oblivious encryption,Privacy protection,pseudonym system},
+  file = {/Users/carlosribeiro/Zotero/storage/4XPR5BK4/Camenisch and Lysyanskaya - 2001 - An Efficient System for Non-transferable Anonymous.pdf}
+}
+
+@misc{camenischFullyAnonymousAttribute2012,
+  title = {Fully {{Anonymous Attribute Tokens}} from {{Lattices}}},
+  author = {Camenisch, Jan and Neven, Gregory and R{\"u}ckert, Markus},
+  year = {2012},
+  number = {2012/356},
+  urldate = {2023-09-19},
+  abstract = {Anonymous authentication schemes such as group signatures and anonymous credentials are important privacy-protecting tools in electronic communications. The only currently known scheme based on assumptions that resist quantum attacks is the group signature scheme by Gordon et al. (ASIACRYPT 2010). We present a generalization of group signatures called *anonymous attribute tokens* where users are issued attribute-containing credentials that they can use to anonymously sign messages and generate tokens revealing only a subset of their attributes. We present two lattice-based constructions of this new primitive, one with and one without opening capabilities for the group manager. The latter construction directly yields as a special case the first lattice-based group signature scheme offering full anonymity (in the random-oracle model), as opposed to the practically less relevant notion of chosen-plaintext anonymity offered by the scheme of Gordon et al. We also extend our scheme to protect users from framing attacks by the group manager, where the latter creates tokens or signatures in the name of honest users. Our constructions involve new lattice-based tools for aggregating signatures and verifiable CCA2-secure encryption.},
+  keywords = {Anonymous attribute tokens,group signatures,lattices,post-quantum cryptography.},
+  annotation = {Publication info: Published elsewhere. SCN 2012},
+  file = {/Users/carlosribeiro/Zotero/storage/SRJJEFGS/Camenisch et al. - 2012 - Fully Anonymous Attribute Tokens from Lattices.pdf}
+}
+
+@inproceedings{camenischSignatureSchemesAnonymous2004,
+  title = {Signature {{Schemes}} and {{Anonymous Credentials}} from {{Bilinear Maps}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2004},
+  author = {Camenisch, Jan and Lysyanskaya, Anna},
+  editor = {Franklin, Matt},
+  year = {2004},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {56--72},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-540-28628-8_4},
+  abstract = {We propose a new and efficient signature scheme that is provably secure in the plain model. The security of our scheme is based on a discrete-logarithm-based assumption put forth by Lysyanskaya, Rivest, Sahai, and Wolf (LRSW) who also showed that it holds for generic groups and is independent of the decisional Diffie-Hellman assumption. We prove security of our scheme under the LRSW assumption for groups with bilinear maps. We then show how our scheme can be used to construct efficient anonymous credential systems as well as group signature and identity escrow schemes. To this end, we provide efficient protocols that allow one to prove in zero-knowledge the knowledge of a signature on a committed (or encrypted) message and to obtain a signature on a committed message.},
+  isbn = {978-3-540-28628-8},
+  langid = {english},
+  keywords = {Commitment Scheme,Digital Signature Scheme,Discrete Logarithm,Random Oracle,Signature Scheme},
+  file = {/Users/carlosribeiro/Zotero/storage/D4WXHPU6/Camenisch and Lysyanskaya - 2004 - Signature Schemes and Anonymous Credentials from B.pdf}
+}
+
+@inproceedings{chaumBlindSignaturesUntraceable1982,
+  title = {Blind {{Signatures}} for {{Untraceable Payments}}},
+  booktitle = {Proceedings of {{Crypto}} 82},
+  author = {Chaum, David},
+  year = {1982},
+  pages = {199},
+  publisher = {{Springer}},
+  file = {/Users/carlosribeiro/Zotero/storage/4QAKC9B4/978-1-4757-0602-4.html}
+}
+
+@article{chaumSecurityIdentificationTransaction1985,
+  title = {Security without Identification: Transaction Systems to Make Big Brother Obsolete},
+  shorttitle = {Security without Identification},
+  author = {Chaum, David},
+  year = {1985},
+  month = oct,
+  journal = {Communications of the ACM},
+  volume = {28},
+  number = {10},
+  pages = {1030--1044},
+  issn = {0001-0782},
+  doi = {10.1145/4372.4373},
+  urldate = {2023-09-19},
+  abstract = {The large-scale automated transaction systems of the near future can be designed to protect the privacy and maintain the security of both individuals and organizations.},
+  file = {/Users/carlosribeiro/Zotero/storage/SZQWB6RB/Chaum - 1985 - Security without identification transaction syste.pdf}
+}
+
+@inproceedings{cheonHomomorphicEncryptionArithmetic2017,
+  title = {Homomorphic Encryption for Arithmetic of Approximate Numbers},
+  booktitle = {International Conference on the Theory and Application of Cryptology and Information Security},
+  author = {Cheon, Jung Hee and Kim, Andrey and Kim, Miran and Song, Yongsoo},
+  year = {2017},
+  pages = {409--437},
+  publisher = {{Springer}}
+}
+
+@article{cheonOptimizedSearchandcomputeCircuits2015,
+  title = {Optimized Search-and-Compute Circuits and Their Application to Query Evaluation on Encrypted Data},
+  author = {Cheon, Jung Hee and Kim, Miran and Kim, Myungsun},
+  year = {2015},
+  journal = {IEEE Transactions on Information Forensics and Security},
+  volume = {11},
+  number = {1},
+  pages = {188--199},
+  publisher = {{IEEE}}
+}
+
+@inproceedings{cheonSearchandcomputeEncryptedData2015,
+  title = {Search-and-Compute on Encrypted Data},
+  booktitle = {International {{Conference}} on {{Financial Cryptography}} and {{Data Security}}},
+  author = {Cheon, Jung Hee and Kim, Miran and Kim, Myungsun},
+  year = {2015},
+  pages = {142--159},
+  publisher = {{Springer}}
+}
+
+@inproceedings{chillottiFasterPackedHomomorphic2017,
+  title = {Faster {{Packed Homomorphic Operations}} and {{Efficient Circuit Bootstrapping}} for {{TFHE}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{ASIACRYPT}} 2017},
+  author = {Chillotti, Ilaria and Gama, Nicolas and Georgieva, Mariya and Izabach{\`e}ne, Malika},
+  editor = {Takagi, Tsuyoshi and Peyrin, Thomas},
+  year = {2017},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {377--408},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-70694-8_14},
+  abstract = {In this paper, we present several methods to improve the evaluation of homomorphic functions in TFHE, both for fully and for leveled homomorphic encryption. We propose two methods to manipulate packed data, in order to decrease the ciphertext expansion and optimize the evaluation of look-up tables and arbitrary functions in \$\$\{{\textbackslash}mathrm \{RingGSW\}\}\$\$RingGSWbased homomorphic schemes. We also extend the automata logic, introduced in [12, 19], to the efficient leveled evaluation of weighted automata, and present a new homomorphic counter called \$\${\textbackslash}mathrm \{TBSR\}\$\$TBSR, that supports all the elementary operations that occur in a multiplication. These improvements speed-up the evaluation of most arithmetic functions in a packed leveled mode, with a noise overhead that remains additive. We finally present a new circuit bootstrapping that converts \$\${\textbackslash}mathsf \{LWE\}\$\$LWEinto low-noise \$\$\{{\textbackslash}mathrm \{RingGSW\}\}\$\$RingGSWciphertexts in just 137~ms, which makes the leveled mode of TFHE composable, and which is fast enough to speed-up arithmetic functions, compared to the gate-by-gate bootstrapping given in [12]. Finally, we propose concrete parameter sets and timing comparison for all our constructions.},
+  isbn = {978-3-319-70694-8},
+  langid = {english},
+  keywords = {Arithmetic,Bootstrapping,FHE,GSW,Leveled,LWE,Packing,Weighted automata},
+  file = {/Users/carlosribeiro/Zotero/storage/8DUVDRTB/Chillotti et al. - 2017 - Faster Packed Homomorphic Operations and Efficient.pdf}
+}
+
+@inproceedings{chillottiHomomorphicLWEBased2016,
+  title = {A {{Homomorphic LWE Based E-voting Scheme}}},
+  booktitle = {Post-{{Quantum Cryptography}}},
+  author = {Chillotti, Ilaria and Gama, Nicolas and Georgieva, Mariya and Izabach{\`e}ne, Malika},
+  editor = {Takagi, Tsuyoshi},
+  year = {2016},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {245--265},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-29360-8_16},
+  abstract = {In this paper we present a new post-quantum electronic-voting protocol. Our construction is based on LWE fully homomorphic encryption and the protocol is inspired by existing e-voting schemes, in particular Helios. The strengths of our scheme are its simplicity and transparency, since it relies on public homomorphic operations. Furthermore, the use of lattice-based primitives greatly simplifies the proofs of correctness, privacy and verifiability, as no zero-knowledge proof are needed to prove the validity of individual ballots or the correctness of the final election result. The security of our scheme is based on classical SIS/LWE assumptions, which are asymptotically as hard as worst-case lattice problems and relies on the random oracle heuristic. We also propose a new procedure to distribute the decryption task, where each trustee provides an independent proof of correct decryption in the form of a publicly verifiable ciphertext trapdoor. In particular, our protocol requires only two trustees, unlike classical proposals using threshold decryption via Shamir's secret sharing.},
+  isbn = {978-3-319-29360-8},
+  langid = {english},
+  keywords = {E-vote,Fully homomorphic encryption,Lattice based protocol,LWE,Post quantum}
+}
+
+@article{chillottiTFHEFastFully2020,
+  title = {{{TFHE}}: Fast Fully Homomorphic Encryption over the Torus},
+  author = {Chillotti, Ilaria and Gama, Nicolas and Georgieva, Mariya and Izabach{\`e}ne, Malika},
+  year = {2020},
+  journal = {Journal of Cryptology},
+  volume = {33},
+  number = {1},
+  pages = {34--91},
+  publisher = {{Springer}}
+}
+
+@inproceedings{connollyImprovedConstructionsAnonymous2022,
+  title = {Improved {{Constructions}} of {{Anonymous Credentials}} from {{Structure-Preserving Signatures}} on {{Equivalence Classes}}},
+  booktitle = {Public-{{Key Cryptography}} {\textendash} {{PKC}} 2022},
+  author = {Connolly, Aisling and Lafourcade, Pascal and Perez Kempner, Octavio},
+  editor = {Hanaoka, Goichiro and Shikata, Junji and Watanabe, Yohei},
+  year = {2022},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {409--438},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-030-97121-2_15},
+  abstract = {Anonymous attribute-based credentials (ABCs) are a powerful tool allowing users to authenticate while maintaining privacy. When instantiated from structure-preserving signatures on equivalence classes (SPS-EQ) we obtain a controlled form of malleability, and hence increased functionality and privacy for the user. Existing constructions consider equivalence classes on the message space, allowing the joint randomization of credentials and the corresponding signatures on them.},
+  isbn = {978-3-030-97121-2},
+  langid = {english},
+  keywords = {Anonymous credentials,Mercurial signatures,SPS-EQ},
+  file = {/Users/carlosribeiro/Zotero/storage/RZA639YN/Connolly et al. - 2022 - Improved Constructions of Anonymous Credentials fr.pdf}
+}
+
+@inproceedings{cousinsImplementingConjunctionObfuscation2018,
+  title = {Implementing {{Conjunction Obfuscation Under Entropic Ring LWE}}},
+  booktitle = {2018 {{IEEE Symposium}} on {{Security}} and {{Privacy}} ({{SP}})},
+  author = {Cousins, David Bruce and Di Crescenzo, Giovanni and G{\"u}r, Kamil Doruk and King, Kevin and Polyakov, Yuriy and Rohloff, Kurt and Ryan, Gerard W. and Savas, Erkay},
+  year = {2018},
+  month = may,
+  pages = {354--371},
+  publisher = {{IEEE}},
+  address = {{Oakland}},
+  issn = {2375-1207},
+  doi = {10.1109/SP.2018.00007},
+  urldate = {2024-02-12},
+  abstract = {We address the practicality challenges of secure program obfuscation by implementing, optimizing, and experimentally assessing an approach to securely obfuscate conjunction programs proposed in [1]. Conjunction programs evaluate functions f (x\_1,...,x\_L) = wedge\_i in \_I y\_i, where y\_i is either x\_i or -x\_i and I subseteq [L], and can be used as classifiers. Our obfuscation approach satisfies distributional Virtual Black Box (VBB) security based on reasonable hardness assumptions, namely an entropic variant of the Ring Learning with Errors (Ring-LWE) assumption. Prior implementations of secure program obfuscation techniques support either trivial programs like point functions, or support the obfuscation of more general but less efficient branching programs to satisfy Indistinguishability Obfuscation (IO), a weaker security model. Further, the more general implemented techniques, rather than relying on standard assumptions, base their security on conjectures that have been shown to be theoretically vulnerable. Our work is the first implementation of non-trivial program obfuscation based on polynomial rings. Our contributions include multiple design and implementation advances resulting in reduced program size, obfuscation runtime, and evaluation runtime by many orders of magnitude. We implement our design in software and experimentally assess performance in a commercially available multi-core computing environment. Our implementation achieves runtimes of 6.7 hours to securely obfuscate a 64-bit conjunction program and 2.5 seconds to evaluate this program over an arbitrary input. We are also able to obfuscate a 32-bit conjunction program with 53 bits of security in 7 minutes and evaluate the obfuscated program in 43 milliseconds on a commodity desktop computer, which implies that 32-bit conjunction obfuscation is already practical. Our graph-induced (directed) encoding implementation runs up to 25 levels, which is higher than previously reported in the literature for this encoding. Our design and implementation advances are applicable to obfuscating more general compute-and-compare programs and can also be used for many cryptographic schemes based on lattice trapdoors.},
+  keywords = {Computer security,Conjunction,Cryptography,Directed encoding,Encoding,Implementation,Lattice trapdoor,Lattices,Multilinear map,Program obfuscation,Ring LWE,Runtime,Software},
+  file = {/Users/carlosribeiro/Zotero/storage/YJM48UIQ/Cousins et al. - 2018 - Implementing Conjunction Obfuscation Under Entropi.pdf;/Users/carlosribeiro/Zotero/storage/Q4KXV4KD/8418613.html}
+}
+
+@misc{curranAnonCredsSpecification2023,
+  title = {{{AnonCreds Specification}}},
+  author = {Curran, Stephen},
+  year = {2023},
+  month = sep,
+  urldate = {2023-09-22},
+  abstract = {The specification for AnonCreds verifiable credential exchange.},
+  copyright = {Apache-2.0},
+  howpublished = {Hyperledger},
+  keywords = {self-so,specification,verifiable-credentials}
+}
+
+@incollection{damgardMultipartyComputationSomewhat2012,
+  title = {Multiparty {{Computation}} from {{Somewhat Homomorphic Encryption}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2012},
+  author = {Damg{\aa}rd, Ivan and Pastro, Valerio and Smart, Nigel and Zakarias, Sarah},
+  editor = {{Safavi-Naini}, Reihaneh and Canetti, Ran},
+  year = {2012},
+  volume = {7417},
+  pages = {643--662},
+  publisher = {{Springer Berlin Heidelberg}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-32009-5_38},
+  urldate = {2023-09-06},
+  abstract = {We propose a general multiparty computation protocol secure against an active adversary corrupting up to n-1 of the n players. The protocol may be used to compute securely arithmetic circuits over any finite field Fpk . Our protocol consists of a preprocessing phase that is both independent of the function to be computed and of the inputs, and a much more efficient online phase where the actual computation takes place. The online phase is unconditionally secure and has total computational (and communication) complexity linear in n, the number of players, where earlier work was quadratic in n. Moreover, the work done by each player is only a small constant factor larger than what one would need to compute the circuit in the clear. We show this is optimal for computation in large fields. In practice, for 3 players, a secure 64-bit multiplication can be done in 0.05 ms. Our preprocessing is based on a somewhat homomorphic cryptosystem. We extend a scheme by Brakerski et al., so that we can perform distributed decryption and handle many values in parallel in one ciphertext. The computational complexity of our preprocessing phase is dominated by the public-key operations, we need O(n2/s) operations per secure multiplication where s is a parameter that increases with the security parameter of the cryptosystem. Earlier work in this model needed {$\Omega$}(n2) operations. In practice, the preprocessing prepares a secure 64-bit multiplication for 3 players in about 13 ms.},
+  isbn = {978-3-642-32008-8 978-3-642-32009-5},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/SI2IGHFE/Damgård et al. - 2012 - Multiparty Computation from Somewhat Homomorphic E.pdf}
+}
+
+@inproceedings{delpinoLatticeBasedGroupSignatures2018,
+  title = {Lattice-{{Based Group Signatures}} and {{Zero-Knowledge Proofs}} of {{Automorphism Stability}}},
+  booktitle = {Proceedings of the 2018 {{ACM SIGSAC Conference}} on {{Computer}} and {{Communications Security}}},
+  author = {Del Pino, Rafael and Lyubashevsky, Vadim and Seiler, Gregor},
+  year = {2018},
+  month = oct,
+  pages = {574--591},
+  publisher = {{ACM}},
+  address = {{Toronto Canada}},
+  doi = {10.1145/3243734.3243852},
+  urldate = {2023-09-05},
+  abstract = {We present a group signature scheme, based on the hardness of lattice problems, whose outputs are more than an order of magnitude smaller than the currently most efficient schemes in the literature. Since lattice-based schemes are also usually non-trivial to efficiently implement, we additionally provide the first experimental implementation of lattice-based group signatures demonstrating that our construction is indeed practical {\textendash} all operations take less than half a second on a standard laptop.},
+  isbn = {978-1-4503-5693-0},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/7AIYIA8W/Del Pino et al. - 2018 - Lattice-Based Group Signatures and Zero-Knowledge .pdf}
+}
+
+@article{ducasCrystalsdilithiumLatticebasedDigital2018,
+  title = {Crystals-Dilithium: {{A}} Lattice-Based Digital Signature Scheme},
+  shorttitle = {Crystals-Dilithium},
+  author = {Ducas, L{\'e}o and Kiltz, Eike and Lepoint, Tancrede and Lyubashevsky, Vadim and Schwabe, Peter and Seiler, Gregor and Stehl{\'e}, Damien},
+  year = {2018},
+  journal = {IACR Transactions on Cryptographic Hardware and Embedded Systems},
+  pages = {238--268},
+  file = {/Users/carlosribeiro/Zotero/storage/XYMG86DR/Ducas et al. - 2018 - Crystals-dilithium A lattice-based digital signat.pdf;/Users/carlosribeiro/Zotero/storage/2HAFJUEK/839.html}
+}
+
+@inproceedings{ducasFastFourierOrthogonalization2016,
+  title = {Fast {{Fourier Orthogonalization}}},
+  booktitle = {Proceedings of the {{ACM}} on {{International Symposium}} on {{Symbolic}} and {{Algebraic Computation}}},
+  author = {Ducas, L{\'e}o and Prest, Thomas},
+  year = {2016},
+  month = jul,
+  series = {{{ISSAC}} '16},
+  pages = {191--198},
+  publisher = {{Association for Computing Machinery}},
+  address = {{New York, NY, USA}},
+  doi = {10.1145/2930889.2930923},
+  urldate = {2022-10-11},
+  abstract = {The classical fast Fourier transform (FFT) allows to compute in quasi-linear time the product of two polynomials, in the circular convolution ring R[x]/(xd -1) --- a task that naively requires quadratic time. Equivalently, it allows to accelerate matrix-vector products when the matrix is circulant. In this work, we discover that the ideas of the FFT can be applied to speed up the orthogonalization process of matrices with circulant blocks of size d x d. We show that, when d is composite, it is possible to proceed to the orthogonalization in an inductive way ---up to an appropriate re-indexation of rows and columns. This leads to a structured Gram-Schmidt decomposition. In turn, this structured Gram-Schmidt decomposition accelerates a cornerstone lattice algorithm: the nearest plane algorithm. The complexity of both algorithms may be brought down to {$\Theta$}(d log d). Our results easily extend to cyclotomic rings, and can be adapted to Gaussian samplers. This finds applications in lattice-based cryptography, improving the performances of trapdoor functions.},
+  isbn = {978-1-4503-4380-0},
+  keywords = {circulant matrices,fast-fourier transform,gram-schmidt orthogonalization,lattice algorithms,matrix factorization,nearest plane algorithm},
+  file = {/Users/carlosribeiro/Zotero/storage/FH7UFVBW/Ducas and Prest - 2016 - Fast Fourier Orthogonalization.pdf}
+}
+
+@misc{esginMatRiCTMoreEfficient,
+  title = {{{MatRiCT}}+: {{More Efficient Post-Quantum Private Blockchain Payments}}},
+  shorttitle = {{{MatRiCT}}+},
+  author = {Esgin, Muhammed F. and Steinfeld, Ron and Zhao, Raymond K.},
+  urldate = {2023-01-11},
+  abstract = {We introduce MatRiCT+, a practical private blockchain payment protocol based on ``post-quantum'' lattice assumptions. MatRiCT+ builds on MatRiCT due to Esgin et al. (ACM CCS'19) and, in general, follows the Ring Confidential Transactions (RingCT) approach used in Monero, the largest privacy-preserving cryptocurrency. In terms of the practical aspects, MatRiCT+ has 2-18x shorter proofs (depending on the number of input accounts, M) and runs 3-11x faster (for a typical transaction) in comparison to MatRiCT. A significant advantage of MatRiCT+ is that the proof length's dependence on M is very minimal (only O(log M)), while MatRiCT has a proof length linear in M. To support its efficiency, we devise several novel techniques in our design of MatRiCT+ to achieve compact lattice-based zero-knowledge proof systems, exploiting the algebraic properties of power-of-2 cyclotomic rings commonly used in practical lattice-based cryptography. Along the way, we design a family of ``optimal'' challenge spaces, using a technique we call partition-and-sample, with minimal \${\textbackslash}ell\_1\$-norm and invertible challenge differences (with overwhelming probability), while supporting highly-splitting power-of-2 cyclotomic rings. We believe all these results to be widely applicable and of independent interest.New results and further details are added.},
+  keywords = {Blockchain,Lattice,Post-Quantum,Ring Signature,RingCT,Zero-Knowledge}
+}
+
+@article{fanSomewhatPracticalFully2012,
+  title = {Somewhat Practical Fully Homomorphic Encryption},
+  author = {Fan, Junfeng and Vercauteren, Frederik},
+  year = {2012},
+  journal = {Cryptology ePrint Archive}
+}
+
+@techreport{FIPS203,
+  title = {Module-Lattice-Based Key-Encapsulation Mechanism Standard},
+  author = {of Standards, National Institute and {Technology}},
+  year = {2023},
+  number = {Federal Information Processing Standards Publications (FIPS PUBS) 203},
+  address = {{Washington, D.C.}},
+  institution = {{U.S. Department of Commerce}},
+  doi = {10.6028/NIST.FIPS.203.ipd}
+}
+
+@techreport{FIPS204,
+  title = {Module-Lattice-Based Digital Signature Standard},
+  author = {of Standards, National Institute and {Technology}},
+  year = {2023},
+  number = {Federal Information Processing Standards Publications (FIPS PUBS) 204},
+  address = {{Washington, D.C.}},
+  institution = {{U.S. Department of Commerce}},
+  doi = {10.6028/NIST.FIPS.204.ipd}
+}
+
+@article{fouqueFalconFastFourierLatticebased2018,
+  title = {Falcon: {{Fast-Fourier}} Lattice-Based Compact Signatures over {{NTRU}}},
+  shorttitle = {Falcon},
+  author = {Fouque, Pierre-Alain and Hoffstein, Jeffrey and Kirchner, Paul and Lyubashevsky, Vadim and Pornin, Thomas and Prest, Thomas and Ricosset, Thomas and Seiler, Gregor and Whyte, William and Zhang, Zhenfei},
+  year = {2018},
+  journal = {Submission to the NIST's post-quantum cryptography standardization process},
+  volume = {36},
+  number = {5},
+  pages = {1--75},
+  file = {/Users/carlosribeiro/Zotero/storage/75ERLMZI/Fouque et al. - 2018 - Falcon Fast-Fourier lattice-based compact signatu.pdf}
+}
+
+@article{fritzmannRISQVTightlyCoupled2020,
+  title = {{{RISQ-V}}: {{Tightly}} Coupled {{RISC-V}} Accelerators for Post-Quantum Cryptography},
+  shorttitle = {{{RISQ-V}}},
+  author = {Fritzmann, Tim and Sigl, Georg and Sep{\'u}lveda, Johanna},
+  year = {2020},
+  journal = {IACR Transactions on Cryptographic Hardware and Embedded Systems},
+  pages = {239--280},
+  file = {/Users/carlosribeiro/Zotero/storage/C2HD3GEH/Fritzmann et al. - 2020 - RISQ-V Tightly coupled RISC-V accelerators for po.pdf;/Users/carlosribeiro/Zotero/storage/TREGJ3YZ/8683.html}
+}
+
+@misc{garmanDecentralizedAnonymousCredentials2013,
+  title = {Decentralized {{Anonymous Credentials}}},
+  author = {Garman, Christina and Green, Matthew and Miers, Ian},
+  year = {2013},
+  number = {2013/622},
+  urldate = {2024-02-12},
+  abstract = {Anonymous credentials provide a powerful tool for making assertions about identity while maintaining privacy. However, a limitation of today's anonymous credential systems is the need for a trusted credential issuer --- which is both a single point of failure and a target for compromise. Furthermore, the need for such a trusted issuer can make it challenging to deploy credential systems in practice, particularly in the ad hoc network setting (e.g., anonymous peer-to-peer networks) where no single party can be trusted with this responsibility. In this work we propose a novel anonymous credential scheme that eliminates the need for a trusted credential issuer. Our approach builds on recent results in the area of electronic cash and uses techniques --- such as the calculation of a distributed transaction ledger --- that are currently in widespread deployment in the Bitcoin payment system. Using this decentralized ledger and standard cryptographic primitives, we propose and provide a proof of security for a basic anonymous credential system that allows users to make flexible identity assertions with strong privacy guarantees. Finally, we discuss a number of practical applications for our techniques, including resource management in ad hoc networks and prevention of Sybil attacks. We implement our scheme and measure its efficiency.},
+  keywords = {anonymous credentials,Bitcoin},
+  annotation = {Publication info: Preprint.},
+  file = {/Users/carlosribeiro/Zotero/storage/WEL3RWWF/Garman et al. - 2013 - Decentralized Anonymous Credentials.pdf}
+}
+
+@misc{GDPR2016a,
+  title = {Regulation ({{EU}}) 2016/679 of the {{European Parliament}} and of the {{Council}}. of 27 {{April}} 2016 on the Protection of Natural Persons with Regard to the Processing of Personal Data and on the Free Movement of Such Data, and Repealing {{Directive}} 95/46/{{EC}} ({{General Data Protection Regulation}})},
+  author = {{European Parliament} and {Council of the European Union}},
+  year = {2016},
+  month = may,
+  address = {{OJ L 119, 4.5.2016, p. 1{\textendash}88}},
+  urldate = {2023-04-13},
+  abstract = {The General Data Protection Regulation (2016/679, "GDPR") is a Regulation in European Union (EU) law on data protection and privacy in the EU and the European Economic Area (EEA).},
+  howpublished = {https://data.europa.eu/eli/reg/2016/679/oj},
+  keywords = {access consumer data data-processing freedom gdpr information justice law personal privacy protection security verification}
+}
+
+@incollection{gentryBetterBootstrappingFully2012,
+  title = {Better {{Bootstrapping}} in {{Fully Homomorphic Encryption}}},
+  booktitle = {Public {{Key Cryptography}} {\textendash} {{PKC}} 2012},
+  author = {Gentry, Craig and Halevi, Shai and Smart, Nigel P.},
+  editor = {Hutchison, David and Kanade, Takeo and Kittler, Josef and Kleinberg, Jon M. and Mattern, Friedemann and Mitchell, John C. and Naor, Moni and Nierstrasz, Oscar and Pandu Rangan, C. and Steffen, Bernhard and Sudan, Madhu and Terzopoulos, Demetri and Tygar, Doug and Vardi, Moshe Y. and Weikum, Gerhard and Fischlin, Marc and Buchmann, Johannes and Manulis, Mark},
+  year = {2012},
+  volume = {7293},
+  pages = {1--16},
+  publisher = {{Springer Berlin Heidelberg}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-30057-8_1},
+  urldate = {2023-09-09},
+  abstract = {Gentry's bootstrapping technique is currently the only known method of obtaining a ``pure'' fully homomorphic encryption (FHE) schemes, and it may offers performance advantages even in cases that do not require pure FHE (such as when using the new noise-control technique of Brakerski-GentryVaikuntanathan).},
+  isbn = {978-3-642-30056-1 978-3-642-30057-8},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/XDM4G2LN/Gentry et al. - 2012 - Better Bootstrapping in Fully Homomorphic Encrypti.pdf}
+}
+
+@inproceedings{gentryRingSwitchingBGVStyle2012,
+  title = {Ring {{Switching}} in {{BGV-Style Homomorphic Encryption}}},
+  booktitle = {Security and {{Cryptography}} for {{Networks}}},
+  author = {Gentry, Craig and Halevi, Shai and Peikert, Chris and Smart, Nigel P.},
+  editor = {Visconti, Ivan and De Prisco, Roberto},
+  year = {2012},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {19--37},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-32928-9_2},
+  abstract = {The security of BGV-style homomorphic encryption schemes over polynomial rings relies on rings of very large dimension. This large dimension is needed because of the large modulus-to-noise ratio in the key-switching matrices that are used for the top few levels of the evaluated circuit. However, larger noise (and hence smaller modulus-to-noise ratio) is used in lower levels of the circuit, so from a security standpoint it is permissible to switch to lower-dimension rings, thus speeding up the homomorphic operations for the lower levels of the circuit. However, implementing such ring-switching is nontrivial, since these schemes rely on the ring algebraic structure for their homomorphic properties.},
+  isbn = {978-3-642-32928-9},
+  langid = {english},
+  keywords = {Canonical Embedding,Homomorphic Encryption,Polynomial Ring,Quotient Group,Small Ring}
+}
+
+@inproceedings{gentryTrapdoorsHardLattices2008,
+  title = {Trapdoors for Hard Lattices and New Cryptographic Constructions},
+  booktitle = {Proceedings of the Fortieth Annual {{ACM}} Symposium on {{Theory}} of Computing},
+  author = {Gentry, Craig and Peikert, Chris and Vaikuntanathan, Vinod},
+  year = {2008},
+  month = may,
+  pages = {197--206},
+  publisher = {{ACM}},
+  address = {{Victoria British Columbia Canada}},
+  doi = {10.1145/1374376.1374407},
+  urldate = {2023-09-05},
+  abstract = {We show how to construct a variety of ``trapdoor'' cryptographic tools assuming the worst-case hardness of standard lattice problems (such as approximating the length of the shortest nonzero vector to within certain polynomial factors). Our contributions include a new notion of preimage sampleable functions, simple and efficient ``hash-and-sign'' digital signature schemes, and identity-based encryption. A core technical component of our constructions is an efficient algorithm that, given a basis of an arbitrary lattice, samples lattice points from a discrete Gaussian probability distribution whose standard deviation is essentially the length of the longest Gram-Schmidt vector of the basis. A crucial security property is that the output distribution of the algorithm is oblivious to the particular geometry of the given basis.},
+  isbn = {978-1-60558-047-0},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/MEWKIYT9/Gentry et al. - 2008 - Trapdoors for hard lattices and new cryptographic .pdf}
+}
+
+@inproceedings{gorbunovLeveledFullyHomomorphic2015,
+  title = {Leveled {{Fully Homomorphic Signatures}} from {{Standard Lattices}}},
+  booktitle = {Proceedings of the Forty-Seventh Annual {{ACM}} Symposium on {{Theory}} of {{Computing}}},
+  author = {Gorbunov, Sergey and Vaikuntanathan, Vinod and Wichs, Daniel},
+  year = {2015},
+  month = jun,
+  pages = {469--477},
+  publisher = {{ACM}},
+  address = {{Portland Oregon USA}},
+  doi = {10.1145/2746539.2746576},
+  urldate = {2023-10-04},
+  abstract = {In a homomorphic signature scheme, a user Alice signs some large dataset x using her secret signing key and uploads the signed data to an untrusted remote server. The server can then run some computation y = f (x) over the signed data and homomorphically derive a short signature {$\sigma$}f,y certifying that y is the correct output of the computation f . Anybody can verify the tuple (f, y, {$\sigma$}f,y) using Alice's public verification key and become convinced of this fact without having to retrieve the entire underlying data.},
+  isbn = {978-1-4503-3536-2},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/9YQW2SCH/Gorbunov et al. - 2015 - Leveled Fully Homomorphic Signatures from Standard.pdf}
+}
+
+@misc{hauckLatticeBasedBlindSignatures2020,
+  title = {Lattice-{{Based Blind Signatures}}, {{Revisited}}},
+  author = {Hauck, Eduard and Kiltz, Eike and Loss, Julian and Nguyen, Ngoc Khanh},
+  year = {2020},
+  number = {769},
+  urldate = {2023-01-11},
+  abstract = {We observe that all previously known lattice-based blind signature schemes contain subtle flaws in their security proofs (e.g., R{\"u}ckert, ASIACRYPT '08) or can be attacked (e.g., BLAZE by Alkadri et al., FC '20). Motivated by this, we revisit the problem of constructing blind signatures from standard lattice assumptions. We propose a new three-round lattice-based blind signature scheme whose security can be proved, in the random oracle model, from the standard SIS assumption. Our starting point is a modified version of the (insecure) BLAZE scheme, which itself is based Lyubashevsky's three-round identification scheme combined with a new aborting technique to reduce the correctness error. Our proof builds upon and extends the recent modular framework for blind signatures of Hauck, Kiltz, and Loss (EUROCRYPT '19). It also introduces several new techniques to overcome the additional challenges posed by the correctness error which is inherent to all lattice-based constructions. While our construction is mostly of theoretical interest, we believe it to be an important stepping stone for future works in this area.},
+  keywords = {Blind Signatures},
+  file = {/Users/carlosribeiro/Zotero/storage/IXMMX3EP/Hauck et al. - 2020 - Lattice-Based Blind Signatures, Revisited.pdf}
+}
+
+@article{iliashenkoFasterHomomorphicComparison2021,
+  title = {Faster Homomorphic Comparison Operations for {{BGV}} and {{BFV}}},
+  author = {Iliashenko, Ilia and Zucca, Vincent},
+  year = {2021},
+  journal = {Proceedings on Privacy Enhancing Technologies},
+  volume = {2021},
+  number = {3},
+  pages = {246--264},
+  file = {/Users/carlosribeiro/Zotero/storage/5DDCGYR3/Iliashenko and Zucca - 2021 - Faster homomorphic comparison operations for BGV a.pdf;/Users/carlosribeiro/Zotero/storage/SKX22T8S/hal-03506798.html}
+}
+
+@misc{jeudyLatticeSignatureEfficient2022,
+  title = {Lattice {{Signature}} with {{Efficient Protocols}}, {{Application}} to {{Anonymous Credentials}}},
+  author = {Jeudy, Corentin and {Roux-Langlois}, Adeline and Sanders, Olivier},
+  year = {2022},
+  number = {2022/509},
+  urldate = {2023-09-19},
+  abstract = {Digital signature is an essential primitive in cryptography, which can be used as the digital analogue of handwritten signatures but also as a building block for more complex systems. In the latter case, signatures with specific features are needed, so as to smoothly interact with the other components of the systems, such as zero-knowledge proofs. This has given rise to so-called signatures with efficient protocols, a versatile tool that has been used in countless applications. Designing such signatures is however quite difficult, in particular if one wishes to withstand quantum computing. We are indeed aware of only one post-quantum construction, proposed by Libert et al. at Asiacrypt'16, yielding very large signatures and proofs. In this paper, we propose a new construction that can be instantiated in both standard lattices and structured ones, resulting in each case in dramatic performance improvements. In particular, the size of a proof of message-signature possession, which is one of the main metrics for such schemes, can be brought down to less than 650 KB. As our construction retains all the features expected from signatures with efficient protocols, it can be used as a drop-in replacement in all systems using them, which mechanically improves their own performance, and has thus a direct impact on many applications. It can also be used to easily design new privacy-preserving mechanisms. As an example, we provide the first lattice-based anonymous credentials system.},
+  keywords = {Efficient Protocols,Lattice-Based Cryptography,Privacy,Signature},
+  annotation = {Publication info: A major revision of an IACR publication in CRYPTO 2023},
+  file = {/Users/carlosribeiro/Zotero/storage/345SXGZF/Jeudy et al. - 2022 - Lattice Signature with Efficient Protocols, Applic.pdf}
+}
+
+@inproceedings{katsumataPartitioningNonlinearPolynomial2016,
+  title = {Partitioning via Non-Linear Polynomial Functions: More Compact {{IBEs}} from Ideal Lattices and Bilinear Maps},
+  shorttitle = {Partitioning via Non-Linear Polynomial Functions},
+  booktitle = {Advances in {{Cryptology}}{\textendash}{{ASIACRYPT}} 2016: 22nd {{International Conference}} on the {{Theory}} and {{Application}} of {{Cryptology}} and {{Information Security}}, {{Hanoi}}, {{Vietnam}}, {{December}} 4-8, 2016, {{Proceedings}}, {{Part II}} 22},
+  author = {Katsumata, Shuichi and Yamada, Shota},
+  year = {2016},
+  pages = {682--712},
+  publisher = {{Springer}},
+  file = {/Users/carlosribeiro/Zotero/storage/F7ZR2WLZ/Katsumata and Yamada - 2016 - Partitioning via non-linear polynomial functions .pdf;/Users/carlosribeiro/Zotero/storage/GI5AJLFQ/978-3-662-53890-6_23.html}
+}
+
+@article{kimEfficiencyFHEbasedPrivate2016,
+  title = {On the Efficiency of {{FHE-based}} Private Queries},
+  author = {Kim, Myungsun and Lee, Hyung Tae and Ling, San and Wang, Huaxiong},
+  year = {2016},
+  journal = {IEEE Transactions on Dependable and Secure Computing},
+  volume = {15},
+  number = {2},
+  pages = {357--363},
+  publisher = {{IEEE}}
+}
+
+@inproceedings{kleinFindingClosestLattice2000,
+  title = {Finding the Closest Lattice Vector When It's Unusually Close},
+  booktitle = {Proceedings of the Eleventh Annual {{ACM-SIAM}} Symposium on {{Discrete}} Algorithms},
+  author = {Klein, Philip},
+  year = {2000},
+  month = feb,
+  series = {{{SODA}} '00},
+  pages = {937--941},
+  publisher = {{Society for Industrial and Applied Mathematics}},
+  address = {{USA}},
+  urldate = {2022-10-11},
+  isbn = {978-0-89871-453-1},
+  file = {/Users/carlosribeiro/Zotero/storage/YVEE8R3N/Klein - 2000 - Finding the closest lattice vector when it's unusu.pdf}
+}
+
+@misc{laiLatticebasedCommitTransferrableSignatures2023,
+  title = {Lattice-Based {{Commit-Transferrable Signatures}} and {{Applications}} to {{Anonymous Credentials}}},
+  author = {Lai, Qiqi and Chen, Chongshen and Liu, Feng-Hao and Lysyanskaya, Anna and Wang, Zhedong},
+  year = {2023},
+  number = {2023/766},
+  urldate = {2024-02-12},
+  abstract = {Anonymous Credentials are an important tool to protect user's privacy for proving possession of certain credentials. Although various efficient constructions have been proposed based on pre-quantum assumptions, there have been limited accomplishments in the post-quantum and especially practical settings. This research aims to derive new methods that enhance the current state of the art.  To achieve this, we make the following contributions. By distilling prior design insights, we propose a new primitive to instantiate {\textbackslash}emph\{signature with protocols\}, called commit-transferrable signature ({\textbackslash}CTS). When combined with a multi-theorem straight-line extractable non-interactive zero-knowledge proof of knowledge ({\textbackslash}NIZKPoK), {\textbackslash}CTS gives a modular approach to construct anonymous credentials. We then show efficient instantiations of {\textbackslash}CTS and the required {\textbackslash}NIZKPoK from lattices, which are believed to be post-quantum hard. Finally, we propose concrete parameters for the {\textbackslash}CTS, {\textbackslash}NIZKPoK, and the overall Anonymous Credentials, based on Module-{\textbackslash}SIS{\textasciitilde}and Ring-{\textbackslash}LWE. This would serve as an important guidance for future deployment in practice.},
+  keywords = {Anonymous Credentials,Commit-Transferrable Signature,Lattice-Based Cryptography,Post-Quantum Security},
+  annotation = {Publication info: Preprint.},
+  file = {/Users/carlosribeiro/Zotero/storage/U74N5KSX/Lai et al. - 2023 - Lattice-based Commit-Transferrable Signatures and .pdf}
+}
+
+@article{langloisWorstcaseAveragecaseReductions2015,
+  title = {Worst-Case to Average-Case Reductions for Module Lattices},
+  author = {Langlois, Adeline and Stehl{\'e}, Damien},
+  year = {2015},
+  month = jun,
+  journal = {Designs, Codes and Cryptography},
+  volume = {75},
+  number = {3},
+  pages = {565--599},
+  issn = {1573-7586},
+  doi = {10.1007/s10623-014-9938-4},
+  urldate = {2023-09-18},
+  abstract = {Most lattice-based cryptographic schemes are built upon the assumed hardness of the Short Integer Solution (SIS) and Learning With Errors (LWE) problems. Their efficiencies can be drastically improved by switching the hardness assumptions to the more compact Ring-SIS and Ring-LWE problems. However, this change of hardness assumptions comes along with a possible security weakening: SIS and LWE are known to be at least as hard as standard (worst-case) problems on euclidean lattices, whereas Ring-SIS and Ring-LWE are only known to be as hard as their restrictions to special classes of ideal lattices, corresponding to ideals of some polynomial rings. In this work, we define the Module-SIS and Module-LWE problems, which bridge SIS with Ring-SIS, and LWE with Ring-LWE, respectively. We prove that these average-case problems are at least as hard as standard lattice problems restricted to module lattices (which themselves bridge arbitrary and ideal lattices). As these new problems enlarge the toolbox of the lattice-based cryptographer, they could prove useful for designing new schemes. Importantly, the worst-case to average-case reductions for the module problems are (qualitatively) sharp, in the sense that there exist converse reductions. This property is not known to hold in the context of Ring-SIS/Ring-LWE: Ideal lattice problems could reveal easy without impacting the hardness of Ring-SIS/Ring-LWE.},
+  langid = {english},
+  keywords = {68Q17,95A60,Ideal lattices,Lattice-based cryptography,Module lattices,Worst-case to average-case reductions},
+  file = {/Users/carlosribeiro/Zotero/storage/YNFWCUJ5/Langlois and Stehlé - 2015 - Worst-case to average-case reductions for module l.pdf}
+}
+
+@inproceedings{laponAnalysisRevocationStrategies2011,
+  title = {Analysis of {{Revocation Strategies}} for {{Anonymous Idemix Credentials}}},
+  booktitle = {Communications and {{Multimedia Security}}},
+  author = {Lapon, Jorn and Kohlweiss, Markulf and De Decker, Bart and Naessens, Vincent},
+  editor = {De Decker, Bart and Lapon, Jorn and Naessens, Vincent and Uhl, Andreas},
+  year = {2011},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {3--17},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-24712-5_1},
+  abstract = {In an increasing information-driven society, preserving privacy is essential. Anonymous credentials promise a solution to protect the user's privacy. However, to ensure accountability, efficient revocation mechanisms are essential. Having classified existing revocation strategies, we implemented one variant for each. In this paper we describe our classification and compare our implementations. Finally, we present a detailed analysis and pragmatic evaluation of the strategies.},
+  isbn = {978-3-642-24712-5},
+  langid = {english},
+  keywords = {Anonymous Credentials,Performance,Privacy,Revocation},
+  file = {/Users/carlosribeiro/Zotero/storage/36KHC2U9/Lapon et al. - 2011 - Analysis of Revocation Strategies for Anonymous Id.pdf}
+}
+
+@inproceedings{libertZeroKnowledgeArgumentsLatticeBased2017,
+  title = {Zero-{{Knowledge Arguments}} for {{Lattice-Based PRFs}} and {{Applications}} to {{E-Cash}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{ASIACRYPT}} 2017},
+  author = {Libert, Beno{\^i}t and Ling, San and Nguyen, Khoa and Wang, Huaxiong},
+  editor = {Takagi, Tsuyoshi and Peyrin, Thomas},
+  year = {2017},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {304--335},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-70700-6_11},
+  abstract = {Beyond their security guarantees under well-studied assumptions, algebraic pseudo-random functions are motivated by their compatibility with efficient zero-knowledge proof systems, which is useful in a number of privacy applications like digital cash. We consider the problem of proving the correct evaluation of lattice-based PRFs based on the Learning-With-Rounding (\$\${\textbackslash}mathsf \{LWR\}\$\$) problem introduced by Banerjee et al. (Eurocrypt'12). Namely, we are interested zero-knowledge arguments of knowledge of triples (y,~k,~x) such that \$\$y=F\_k(x)\$\$is the correct evaluation of a PRF for a secret input x and a committed key k. While analogous statements admit efficient zero-knowledge protocols in the discrete logarithm setting, they have never been addressed in lattices so far. We provide such arguments for the key homomorphic PRF of Boneh et al. (Crypto'13) and the generic PRF implied by the \$\${\textbackslash}mathsf \{LWR\}\$\$-based pseudo-random generator. As an application of our ZK arguments, we design the first compact e-cash system based on lattice assumptions. By ``compact'', we mean that the complexity is at most logarithmic in the value of withdrawn wallets. Our system can be seen as a lattice-based analogue of the first compact e-cash construction due to Camenisch, Hohenberger and Lysyanskaya (Eurocrypt'05).},
+  isbn = {978-3-319-70700-6},
+  langid = {english},
+  keywords = {Anonymity,E-cash systems,Lattices,Pseudo-random functions,Zero-knowledge arguments},
+  file = {/Users/carlosribeiro/Zotero/storage/3AD9P36S/Libert et al. - 2017 - Zero-Knowledge Arguments for Lattice-Based PRFs an.pdf}
+}
+
+@misc{lodderAnonymousCredentials2019,
+  title = {Anonymous Credentials 2.0},
+  author = {Lodder, Michael and Khovratovich, Dmitry},
+  year = {2019},
+  publisher = {{26February}},
+  file = {/Users/carlosribeiro/Zotero/storage/WQZES8KS/Lodder and Khovratovich - 2019 - Anonymous credentials 2.0.pdf}
+}
+
+@phdthesis{lysyanskayaSignatureSchemesApplications2002,
+  type = {Thesis},
+  title = {Signature Schemes and Applications to Cryptographic Protocol Design},
+  author = {Lysyanskaya, Anna},
+  year = {2002},
+  urldate = {2023-10-02},
+  abstract = {Signature schemes are fundamental cryptographic primitives, useful as a stand-alone application, and as a building block in the design of secure protocols and other cryptographic objects. In this thesis, we study both the uses that signature schemes find in protocols, and the design of signature schemes suitable for a broad range of applications. An important application of digital signature schemes is an anonymous credential system. In such a system, one can obtain and prove possession of credentials without revealing any additional information. Such systems are the best means of balancing the need of individuals for privacy with the need of large organizations to verify that the people they interact with have the required credentials. We show how to construct an efficient anonymous credential system using an appropriate signature scheme; we then give an example of such asignature scheme. The resulting system is the first one with satisfactory communication and computation costs. The signature scheme we use to construct an anonymous credential system is of independent interest for use in other protocols. The special property of this signature scheme is that it admits an efficient protocol for a zero-knowledge proof of knowledge of a signature. Further, we consider the question of revocation of signatures. We obtain an efficient revocation scheme.},
+  copyright = {M.I.T. theses are protected by copyright. They may be viewed from this source for any purpose, but reproduction or distribution in any format is prohibited without written permission. See provided URL for inquiries about permission.},
+  langid = {english},
+  school = {Massachusetts Institute of Technology},
+  annotation = {Accepted: 2005-10-14T19:34:05Z},
+  file = {/Users/carlosribeiro/Zotero/storage/XVXZQ5S9/Lysyanskaya - 2002 - Signature schemes and applications to cryptographi.pdf}
+}
+
+@misc{lyubashevskyAsymptoticallyEfficientLatticeBased,
+  title = {Asymptotically {{Efficient Lattice-Based Digital Signatures}}},
+  author = {Lyubashevsky, Vadim and Micciancio, Daniele},
+  urldate = {2023-01-11},
+  abstract = {We present a general framework that converts certain types of linear collision-resistant hash functions into one-time signatures. Our generic construction can be instantiated based on both general and ideal (e.g. cyclic) lattices, and the resulting signature schemes are provably secure based on the worst-case hardness of approximating the shortest vector (and other standard lattice problems) in the corresponding class of lattices to within a polynomial factor. When instantiated with ideal lattices, the time complexity of the signing and verification algorithms, as well as key and signature size is almost linear (up to poly-logarithmic factors) in the dimension n of the underlying lattice. Since no sub-exponential (in n) time algorithm is known to solve lattice problems in the worst case, even when restricted to ideal lattices, our construction gives a digital signature scheme with an essentially optimal performance/security trade-off.A version of this work appeared at TCC 2008. This is an expanded and simplified version of that work that appears in JoC 2018.},
+  keywords = {lattices,signatures}
+}
+
+@misc{lyubashevskyEfficientLatticeBasedBlind,
+  title = {Efficient {{Lattice-Based Blind Signatures}} via {{Gaussian One-Time Signatures}}},
+  author = {Lyubashevsky, Vadim and Nguyen, Ngoc Khanh and Plancon, Maxime},
+  urldate = {2023-01-11},
+  abstract = {Lattice-based blind signature schemes have been receiving some recent attention lately. Earlier efficient 3-round schemes (Asiacrypt 2010, Financial Cryptography 2020) were recently shown to have mistakes in their proofs, and fixing them turned out to be extremely inefficient and limited the number of signatures that a signer could send to less than a dozen (Crypto 2020). In this work we propose a round-optimal, 2-round lattice-based blind signature scheme which produces signatures of length 150KB. The running time of the signing protocol is linear in the maximum number signatures that can be given out, and this limits the number of signatures that can be signed per public key. Nevertheless, the scheme is still quite efficient when the number of signatures is limited to a few dozen thousand, and appears to currently be the most efficient lattice-based candidate.},
+  keywords = {blind signatures,lattices}
+}
+
+@inproceedings{lyubashevskyGeneralizedCompactKnapsacks2006,
+  title = {Generalized {{Compact Knapsacks Are Collision Resistant}}},
+  booktitle = {Automata, {{Languages}} and {{Programming}}},
+  author = {Lyubashevsky, Vadim and Micciancio, Daniele},
+  editor = {Bugliesi, Michele and Preneel, Bart and Sassone, Vladimiro and Wegener, Ingo},
+  year = {2006},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {144--155},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/11787006_13},
+  abstract = {In (Micciancio, FOCS 2002), it was proved that solving the generalized compact knapsack problem on the average is as hard as solving certain worst-case problems for cyclic lattices. This result immediately yielded very efficient one-way functions whose security was based on worst-case hardness assumptions. In this work, we show that, while the function proposed by Micciancio is not collision resistant, it can be easily modified to achieve collision resistance under essentially the same complexity assumptions on cyclic lattices. Our modified function is obtained as a special case of a more general result, which yields efficient collision-resistant hash functions based on the worst-case hardness of various new problems. These include new problems from algebraic number theory as well as classic lattice problems (e.g., the shortest vector problem) over ideal lattices, a class of lattices that includes cyclic lattices as a special case.},
+  isbn = {978-3-540-35908-1},
+  langid = {english},
+  keywords = {Algebraic Number Theory,Cyclic Lattice,Expansion Factor,Hash Function,Ideal Lattice},
+  file = {/Users/carlosribeiro/Zotero/storage/9A28JUCP/Lyubashevsky and Micciancio - 2006 - Generalized Compact Knapsacks Are Collision Resist.pdf}
+}
+
+@inproceedings{lyubashevskyIdealLatticesLearning2010,
+  title = {On {{Ideal Lattices}} and {{Learning}} with {{Errors}} over {{Rings}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{EUROCRYPT}} 2010},
+  author = {Lyubashevsky, Vadim and Peikert, Chris and Regev, Oded},
+  editor = {Gilbert, Henri},
+  year = {2010},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {1--23},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-13190-5_1},
+  abstract = {The ``learning with errors'' (LWE) problem is to distinguish random linear equations, which have been perturbed by a small amount of noise, from truly uniform ones. The problem has been shown to be as hard as worst-case lattice problems, and in recent years it has served as the foundation for a plethora of cryptographic applications. Unfortunately, these applications are rather inefficient due to an inherent quadratic overhead in the use of LWE. A main open question was whether LWE and its applications could be made truly efficient by exploiting extra algebraic structure, as was done for lattice-based hash functions (and related primitives).},
+  isbn = {978-3-642-13190-5},
+  langid = {english},
+  keywords = {Canonical Embedding,Chinese Remainder Theorem,Ideal Lattice,Oblivious Transfer,Prime Ideal},
+  file = {/Users/carlosribeiro/Zotero/storage/YXDPCTC5/Lyubashevsky et al. - 2010 - On Ideal Lattices and Learning with Errors over Ri.pdf}
+}
+
+@inproceedings{lyubashevskyLatticeBasedZeroKnowledgeProofs2022,
+  title = {Lattice-{{Based Zero-Knowledge Proofs}} and~{{Applications}}: {{Shorter}}, {{Simpler}}, and~{{More General}}},
+  shorttitle = {Lattice-{{Based Zero-Knowledge Proofs}} and~{{Applications}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2022},
+  author = {Lyubashevsky, Vadim and Nguyen, Ngoc Khanh and Plan{\c c}on, Maxime},
+  editor = {Dodis, Yevgeniy and Shrimpton, Thomas},
+  year = {2022},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {71--101},
+  publisher = {{Springer Nature Switzerland}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-031-15979-4_3},
+  abstract = {We present a much-improved practical protocol, based on the hardness of Module-SIS and Module-LWE problems, for proving knowledge of a short vector \$\${\textbackslash}vec s\$\$s{\textrightarrow}satisfying \$\$A{\textbackslash}vec s={\textbackslash}vec t{\textbackslash}bmod q\$\$As{\textrightarrow}=t{\textrightarrow}modq. The currently most-efficient technique for constructing such a proof works by showing that the \$\${\textbackslash}ell \_{\textbackslash}infty \$\${$\mathscr{l}\infty$}norm of \$\${\textbackslash}vec s\$\$s{\textrightarrow}is small. It creates a commitment to a polynomial vector \$\${\textbackslash}textbf\{m\}\$\$mwhose CRT coefficients are the coefficients of \$\${\textbackslash}vec s\$\$s{\textrightarrow}and then shows that (1) \$\$A{\textbackslash}cdot {\textbackslash}textsf\{CRT\}({\textbackslash}textbf\{m\})={\textbackslash}vec t{\textbackslash}bmod {\textbackslash},q\$\$A{$\cdot$}CRT(m)=t{\textrightarrow}modqand (2) in the case that we want to prove that the \$\${\textbackslash}ell \_{\textbackslash}infty \$\${$\mathscr{l}\infty$}norm is at most 1, the polynomial product \$\$({\textbackslash}textbf\{m\}- {\textbackslash}boldsymbol\{1\}){\textbackslash}cdot {\textbackslash}textbf\{m\}{\textbackslash}cdot ({\textbackslash}textbf\{m\}+{\textbackslash}boldsymbol\{1\})\$\$(m-1){$\cdot$}m{$\cdot$}(m+1)equals to 0. While these schemes are already quite practical, the requirement of using the CRT embedding and only being naturally adapted to proving the \$\${\textbackslash}ell \_{\textbackslash}infty \$\${$\mathscr{l}\infty$}-norm, somewhat hinders the efficiency of this approach.},
+  isbn = {978-3-031-15979-4},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/7GJ2Z7V9/Lyubashevsky et al. - 2022 - Lattice-Based Zero-Knowledge Proofs and Applicatio.pdf}
+}
+
+@incollection{lyubashevskyOneShotVerifiableEncryption2017,
+  title = {One-{{Shot Verifiable Encryption}} from {{Lattices}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{EUROCRYPT}} 2017},
+  author = {Lyubashevsky, Vadim and Neven, Gregory},
+  editor = {Coron, Jean-S{\'e}bastien and Nielsen, Jesper Buus},
+  year = {2017},
+  volume = {10210},
+  pages = {293--323},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-319-56620-7_11},
+  urldate = {2023-09-14},
+  abstract = {Verifiable encryption allows one to prove properties about encrypted data and is an important building block in the design of cryptographic protocols, e.g., group signatures, key escrow, fair exchange protocols, etc. Existing lattice-based verifiable encryption schemes, and even just proofs of knowledge of the encrypted data, require parallel composition of proofs to reduce the soundness error, resulting in proof sizes that are only truly practical when amortized over a large number of ciphertexts. In this paper, we present a new construction of a verifiable encryption scheme, based on the hardness of the Ring-LWE problem in the random-oracle model, for short solutions to linear equations over polynomial rings. Our scheme is ``one-shot'', in the sense that a single instance of the proof already has negligible soundness error, yielding compact proofs even for individual ciphertexts. Whereas verifiable encryption usually guarantees that decryption can recover a witness for the original language, we relax this requirement to decrypt a witness of a related but extended language. This relaxation is sufficient for many applications and we illustrate this with example usages of our scheme in key escrow and verifiably encrypted signatures.},
+  isbn = {978-3-319-56619-1 978-3-319-56620-7},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/LXP5CWN3/Lyubashevsky and Neven - 2017 - One-Shot Verifiable Encryption from Lattices.pdf}
+}
+
+@misc{lyubashevskyShorterLatticeBasedGroup2021,
+  title = {Shorter {{Lattice-Based Group Signatures}} via ``{{Almost Free}}'' {{Encryption}} and {{Other Optimizations}}},
+  author = {Lyubashevsky, Vadim and Nguyen, Ngoc Khanh and Plancon, Maxime and Seiler, Gregor},
+  year = {2021},
+  number = {1575},
+  urldate = {2023-01-11},
+  abstract = {We present an improved lattice-based group signature scheme whose parameter sizes and running times are independent of the group size. The signature length in our scheme is aroundKB, which is approximately aX reduction over the previously most compact such scheme, based on any quantum-safe assumption, of del Pino et al. (ACM CCS 2018). The improvement comes via several optimizations of some basic cryptographic components that make up group signature schemes, and we think that they will find other applications in privacy-based lattice cryptography.},
+  keywords = {group signatures,lattices},
+  file = {/Users/carlosribeiro/Zotero/storage/T9YISL4U/Lyubashevsky et al. - 2021 - Shorter Lattice-Based Group Signatures via ``Almos.pdf}
+}
+
+@misc{lyubashevskySMILESetMembership2021,
+  title = {{{SMILE}}: {{Set Membership}} from {{Ideal Lattices}} with {{Applications}} to {{Ring Signatures}} and {{Confidential Transactions}}},
+  shorttitle = {{{SMILE}}},
+  author = {Lyubashevsky, Vadim and Nguyen, Ngoc Khanh and Seiler, Gregor},
+  year = {2021},
+  number = {564},
+  urldate = {2023-01-12},
+  abstract = {In a set membership proof, the public information consists of a set of elements and a commitment. The prover then produces a zero-knowledge proof showing that the commitment is indeed to some element from the set. This primitive is closely related to concepts like ring signatures and ``one-out-of-many'' proofs that underlie many anonymity and privacy protocols. The main result of this work is a new succinct lattice-based set membership proof whose size is logarithmic in the size of the set. We also give a transformation of our set membership proof to a ring signature scheme. The ring signature size is also logarithmic in the size of the public key set and has sizeKB for a set ofelements, andKB for a set of size. At an approximately-bit security level, these outputs are between 1.5X and 7X smaller than the current state of the art succinct ring signatures of Beullens et al. (Asiacrypt 2020) and Esgin et al. (CCS 2019). We then show that our ring signature, combined with a few other techniques and optimizations, can be turned into a fairly efficient Monero-like confidential transaction system based on the MatRiCT framework of Esgin et al. (CCS 2019). With our new techniques, we are able to reduce the transaction proof size by factors of about 4X - 10X over the aforementioned work. For example, a transaction with two inputs and two outputs, where each input is hidden amongother accounts, requires approximatelyKB in our protocol.In submission.},
+  keywords = {Blockchain,Lattices,Ring Signatures,Zero-Knowledge Proofs},
+  file = {/Users/carlosribeiro/Zotero/storage/GKUL536T/Lyubashevsky et al. - 2021 - SMILE Set Membership from Ideal Lattices with App.pdf}
+}
+
+@incollection{micciancioLatticebasedCryptography2009,
+  title = {Lattice-Based {{Cryptography}}},
+  booktitle = {Post-{{Quantum Cryptography}}},
+  author = {Micciancio, Daniele and Regev, Oded},
+  editor = {Bernstein, Daniel J. and Buchmann, Johannes and Dahmen, Erik},
+  year = {2009},
+  pages = {147--191},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-540-88702-7_5},
+  urldate = {2024-02-12},
+  abstract = {In this chapter we describe some of the recent progress in lattice-based cryptography. Lattice-based cryptographic constructions hold a great promise for post-quantum cryptography, as they enjoy very strong security proofs based on worst-case hardness, relatively efficient implementations, as well as great simplicity. In addition, lattice-based cryptography is believed to be secure against quantum computers. Our focus here will be mainly on the practical aspects of lattice-based cryptography and less on the methods used to establish their security. For other surveys on the topic of lattice-based cryptography, see, e.g., [36, 52, 60, 71] and the lecture notes [51, 67]. The survey by Nguyen and Stern [60] also describes some applications of lattices in cryptanalysis, an important topic that we do not discuss here. Another useful resource is the book by Micciancio and Goldwasser [49], which also contains a wealth of information on the computational complexity aspects of lattice problems.},
+  isbn = {978-3-540-88702-7},
+  langid = {english},
+  keywords = {Hash Function,Lattice Problem,Quantum Algorithm,Random Oracle Model,Signature Scheme},
+  file = {/Users/carlosribeiro/Zotero/storage/EMAQPHFH/Micciancio and Regev - 2009 - Lattice-based Cryptography.pdf}
+}
+
+@inproceedings{micciancioTrapdoorsLatticesSimpler2012,
+  title = {Trapdoors for {{Lattices}}: {{Simpler}}, {{Tighter}}, {{Faster}}, {{Smaller}}},
+  shorttitle = {Trapdoors for {{Lattices}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{EUROCRYPT}} 2012},
+  author = {Micciancio, Daniele and Peikert, Chris},
+  editor = {Pointcheval, David and Johansson, Thomas},
+  year = {2012},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {700--718},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-29011-4_41},
+  abstract = {We give new methods for generating and using ``strong trapdoors'' in cryptographic lattices, which are simultaneously simple, efficient, easy to implement (even in parallel), and asymptotically optimal with very small hidden constants. Our methods involve a new kind of trapdoor, and include specialized algorithms for inverting LWE, randomly sampling SIS preimages, and securely delegating trapdoors. These tasks were previously the main bottleneck for a wide range of cryptographic schemes, and our techniques substantially improve upon the prior ones, both in terms of practical performance and quality of the produced outputs. Moreover, the simple structure of the new trapdoor and associated algorithms can be exposed in applications, leading to further simplifications and efficiency improvements. We exemplify the applicability of our methods with new digital signature schemes and CCA-secure encryption schemes, which have better efficiency and security than the previously known lattice-based constructions.},
+  isbn = {978-3-642-29011-4},
+  langid = {english},
+  keywords = {Defense Advance Research Project Agency,Gaussian Parameter,Homomorphic Encryption,Inversion Algorithm,Trapdoor Function},
+  file = {/Users/carlosribeiro/Zotero/storage/CL7HIQ2L/Micciancio and Peikert - 2012 - Trapdoors for Lattices Simpler, Tighter, Faster, .pdf}
+}
+
+@article{micciancioWorstcaseAveragecaseReductions2007,
+  title = {Worst-Case to Average-Case Reductions Based on {{Gaussian}} Measures},
+  author = {Micciancio, Daniele and Regev, Oded},
+  year = {2007},
+  journal = {SIAM Journal on Computing},
+  volume = {37},
+  number = {1},
+  pages = {267--302},
+  publisher = {{SIAM}},
+  file = {/Users/carlosribeiro/Zotero/storage/UKUPBJAA/Micciancio and Regev - 2007 - Worst-case to average-case reductions based on Gau.pdf;/Users/carlosribeiro/Zotero/storage/EG9SFPS6/S0097539705447360.html}
+}
+
+@incollection{nguyenPracticalSublinearProofs2022,
+  title = {Practical {{Sublinear Proofs}} for {{R1CS}} from {{Lattices}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2022},
+  author = {Nguyen, Ngoc Khanh and Seiler, Gregor},
+  editor = {Dodis, Yevgeniy and Shrimpton, Thomas},
+  year = {2022},
+  volume = {13508},
+  pages = {133--162},
+  publisher = {{Springer Nature Switzerland}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-031-15979-4_5},
+  urldate = {2023-09-14},
+  abstract = {We propose a practical sublinear-size zero-knowledge proof system for Rank-1 Constraint Satisfaction (R1CS) based on lattices. The proof size scales asymptotically with the square root of the witness size. Concretely, the size becomes 2-3 times smaller than Ligero (ACM CCS 2017), which also exhibits square root scaling, for large instances of R1CS. At the core lies an interactive variant of the Schwartz-Zippel Lemma that might be of independent interest.},
+  isbn = {978-3-031-15978-7 978-3-031-15979-4},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/R9MTTZCS/Nguyen and Seiler - 2022 - Practical Sublinear Proofs for R1CS from Lattices.pdf}
+}
+
+@inproceedings{peikertEfficientCollisionResistantHashing2006,
+  title = {Efficient {{Collision-Resistant Hashing}} from {{Worst-Case Assumptions}} on {{Cyclic Lattices}}},
+  booktitle = {Theory of {{Cryptography}}},
+  author = {Peikert, Chris and Rosen, Alon},
+  editor = {Halevi, Shai and Rabin, Tal},
+  year = {2006},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {145--166},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/11681878_8},
+  abstract = {The generalized knapsack function is defined as fa(x)\,=\,{$\sum$}\,iai{$\cdot$}xi, where a\,=\,(a1,...,am) consists of m elements from some ring R, and x\,=\,(x1,...,xm) consists of m coefficients from a specified subset S\,{$\subseteq$}\,R. Micciancio (FOCS 2002) proposed a specific choice of the ring R and subset S for which inverting this function (for random a,x) is at least as hard as solving certain worst-case problems on cyclic lattices.},
+  isbn = {978-3-540-32732-5},
+  langid = {english},
+  keywords = {Cyclic Lattice,Cyclotomic Polynomial,Hash Function,Lattice Vector,Short Vector},
+  file = {/Users/carlosribeiro/Zotero/storage/7XFR34CN/Peikert and Rosen - 2006 - Efficient Collision-Resistant Hashing from Worst-C.pdf}
+}
+
+@inproceedings{peikertEfficientParallelGaussian2010,
+  title = {An {{Efficient}} and {{Parallel Gaussian Sampler}} for {{Lattices}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2010},
+  author = {Peikert, Chris},
+  editor = {Rabin, Tal},
+  year = {2010},
+  series = {Lecture {{Notes}} in {{Computer Science}}},
+  pages = {80--97},
+  publisher = {{Springer}},
+  address = {{Berlin, Heidelberg}},
+  doi = {10.1007/978-3-642-14623-7_5},
+  abstract = {At the heart of many recent lattice-based cryptographic schemes is a polynomial-time algorithm that, given a `high-quality' basis, generates a lattice point according to a Gaussian-like distribution. Unlike most other operations in lattice-based cryptography, however, the known algorithm for this task (due to Gentry, Peikert, and Vaikuntanathan; STOC 2008) is rather inefficient, and is inherently sequential.},
+  isbn = {978-3-642-14623-7},
+  langid = {english},
+  keywords = {Intermediate Storage,Lattice Basis,Nonsingular Matrix,Sampling Algorithm,Statistical Distance},
+  file = {/Users/carlosribeiro/Zotero/storage/93ZVI35I/Peikert - 2010 - An Efficient and Parallel Gaussian Sampler for Lat.pdf}
+}
+
+@misc{pinoNewFrameworkMore2022,
+  title = {A {{New Framework For More Efficient Round-Optimal Lattice-Based}} ({{Partially}}) {{Blind Signature}} via {{Trapdoor Sampling}}},
+  author = {del Pino, Rafael and Katsumata, Shuichi},
+  year = {2022},
+  number = {834},
+  urldate = {2023-01-11},
+  abstract = {Blind signatures, proposed by Chaum (CRYPTO'82), are interactive protocols between a signer and a user, where a user can obtain a signature without revealing the message to be signed. Recently, Hauck et al. (EUROCRYPT'20) observed that all efficient lattice-based blind signatures following the blueprint of the original blind signature by R{\"u}kert (ASIACRYPT'10) have a flawed security proof. This puts us in a situation where all known lattice-based blind signatures have at least two of the following drawbacks: heuristic security; 1 MB or more signature size; only supporting bounded polynomially many signatures, or being based on non-standard assumptions. In this work, we construct the first round-optimal (i.e., two-round) lattice-based blind signature with a signature size of roughly 100 KB that supports unbounded polynomially many signatures and is provably secure under standard assumptions. Even if we allow non-standard assumptions and more rounds, ours provide the shortest signature size while simultaneously supporting unbounded polynomially many signatures. The main idea of our work is revisiting the generic blind signature construction by Fischlin (CRYPTO'06) and optimizing the commit-then-open proof using techniques tailored to lattices. Our blind signature is also the first to have a formal security proof in the quantum random oracle model. Finally, our blind signature extends naturally to partially blind signatures, where the user and signer can include an agreed-upon public string in the message.},
+  keywords = {blind signature,lattice,trapdoor sampling},
+  file = {/Users/carlosribeiro/Zotero/storage/39WEUX48/Pino and Katsumata - 2022 - A New Framework For More Efficient Round-Optimal L.pdf}
+}
+
+@misc{PseudoRandomBoneh,
+  title = {Pseudo Random Boneh - {{Pesquisa Google}}},
+  urldate = {2023-01-12},
+  howpublished = {https://www.google.com/search?client=firefox-b-d\&q=pseudo+random+boneh},
+  file = {/Users/carlosribeiro/Zotero/storage/TUMA9FSI/search.html}
+}
+
+@misc{ribeirocnFasterHomomorphicComparison2023,
+  title = {Faster Homomorphic Comparison Operations for {{BGV}} and {{BFV}} Extended for Comparison with the {{PSM}}},
+  author = {{ribeirocn}},
+  year = {2023},
+  month = jan,
+  urldate = {2023-01-12},
+  abstract = {Homomorphic comparison in leveled homomorphic encryption and its applications extended for comparison with the PSM primitive},
+  copyright = {MIT}
+}
+
+@article{smartFullyHomomorphicSIMD2014,
+  title = {Fully Homomorphic {{SIMD}} Operations},
+  author = {Smart, Nigel P and Vercauteren, Frederik},
+  year = {2014},
+  journal = {Designs, codes and cryptography},
+  volume = {71},
+  number = {1},
+  pages = {57--81},
+  publisher = {{Springer}}
+}
+
+@article{tanEfficientPrivateComparison2020,
+  title = {Efficient Private Comparison Queries over Encrypted Databases Using Fully Homomorphic Encryption with Finite Fields},
+  author = {Tan, Benjamin Hong Meng and Lee, Hyung Tae and Wang, Huaxiong and Ren, Shuqin and Aung, Khin Mi Mi},
+  year = {2020},
+  journal = {IEEE Transactions on Dependable and Secure Computing},
+  volume = {18},
+  number = {6},
+  pages = {2861--2874},
+  publisher = {{IEEE}}
+}
+
+@incollection{yangEfficientLatticeBasedZeroKnowledge2019,
+  title = {Efficient {{Lattice-Based Zero-Knowledge Arguments}} with {{Standard Soundness}}: {{Construction}} and {{Applications}}},
+  shorttitle = {Efficient {{Lattice-Based Zero-Knowledge Arguments}} with {{Standard Soundness}}},
+  booktitle = {Advances in {{Cryptology}} {\textendash} {{CRYPTO}} 2019},
+  author = {Yang, Rupeng and Au, Man Ho and Zhang, Zhenfei and Xu, Qiuliang and Yu, Zuoxia and Whyte, William},
+  editor = {Boldyreva, Alexandra and Micciancio, Daniele},
+  year = {2019},
+  volume = {11692},
+  pages = {147--175},
+  publisher = {{Springer International Publishing}},
+  address = {{Cham}},
+  doi = {10.1007/978-3-030-26948-7_6},
+  urldate = {2023-10-03},
+  abstract = {We provide new zero-knowledge argument of knowledge systems that work directly for a wide class of language, namely, ones involving the satisfiability of matrix-vector relations and integer relations commonly found in constructions of lattice-based cryptography. Prior to this work, practical arguments for lattice-based relations either have a constant soundness error ( 2/3 ), or consider a weaker form of soundness, namely, extraction only guarantees that the prover is in possession of a witness that ``approximates'' the actual witness. Our systems do not suffer from these limitations.},
+  isbn = {978-3-030-26947-0 978-3-030-26948-7},
+  langid = {english},
+  file = {/Users/carlosribeiro/Zotero/storage/UJCSL2HB/Yang et al. - 2019 - Efficient Lattice-Based Zero-Knowledge Arguments w.pdf}
+}
